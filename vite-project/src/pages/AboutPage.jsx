@@ -18,8 +18,8 @@ const aboutFaqs = [
   },
   {
     id: "02",
-    question: "What does the tagline \"Creating Vision Into Presence\" mean?",
-    answer: "\"Creating Vision Into Presence\" means we turn your ideas, brand directions, and business goals into visible, usable, and credible digital experiences."
+    question: "What does the tagline \"Creating Vision Into Digital Presence\" mean?",
+    answer: "\"Creating Vision Into Digital Presence\" means we turn your ideas, brand directions, and business goals into visible, usable, and credible digital experiences."
   },
   {
     id: "03",

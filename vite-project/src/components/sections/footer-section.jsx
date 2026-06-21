@@ -122,7 +122,7 @@ export default function FooterSection() {
             © 2026 Yotvis. All rights reserved.
           </p>
           <p className="text-[#FFFFF3]/50 text-sm font-light uppercase tracking-widest font-clash">
-            Creating Vision Into Presence
+            Creating Vision Into Digital Presence
           </p>
         </div>
 
