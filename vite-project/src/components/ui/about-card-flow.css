@@ -1,0 +1,205 @@
+/* ============================================================
+   About Card Flow — scoped to .yotvis-about-flow
+   ============================================================ */
+
+.yotvis-about-flow {
+  position: relative;
+  width: min(900px, 100%);
+  height: 430px;
+  margin-inline: auto;
+  overflow: hidden;
+  isolation: isolate;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: yaf-flow-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.yaf-perspective {
+  position: absolute;
+  inset: 0;
+  perspective: 1200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+}
+
+.yaf-track {
+  position: relative;
+  top: auto;
+  left: auto;
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  transform-style: preserve-3d;
+  transform: rotateX(14deg) rotateY(-12deg) rotateZ(-2deg);
+  animation: yaf-card-flow 36s linear infinite;
+}
+
+/* ---- Cards ---- */
+
+.yaf-card {
+  width: 260px;
+  height: 300px;
+  flex: 0 0 auto;
+  border-radius: 28px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 24px 64px rgba(0, 0, 0, 0.13);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+}
+
+.yaf-card:hover {
+  transform: translateY(-10px) translateZ(24px);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.1),
+    0 34px 90px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Card inner ---- */
+
+.yaf-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  opacity: 0.6;
+}
+
+.yaf-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 2.2rem;
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  font-weight: 800;
+}
+
+.yaf-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.72;
+}
+
+.yaf-card-line {
+  width: 40px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+/* ---- Themes ---- */
+
+.yaf-card-black {
+  background: #000000;
+  color: #fffff3;
+  border-color: rgba(252, 255, 124, 0.2);
+}
+
+.yaf-card-lime {
+  background: #fcff7c;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.yaf-card-cream {
+  background: #fffff3;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.yaf-card-purple {
+  background: #7f7cff;
+  color: #fffff3;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ---- Keyframes ---- */
+
+@keyframes yaf-flow-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes yaf-card-flow {
+  from {
+    transform: rotateX(14deg) rotateY(-12deg) rotateZ(-2deg) translateX(0);
+  }
+  to {
+    transform: rotateX(14deg) rotateY(-12deg) rotateZ(-2deg) translateX(-50%);
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .yotvis-about-flow {
+    width: 100%;
+    height: 340px;
+    margin-top: 2rem;
+  }
+
+  .yaf-track {
+    gap: 0.9rem;
+    transform: rotateX(8deg) rotateY(-6deg) rotateZ(-1deg);
+    animation-duration: 28s;
+  }
+
+  .yaf-card {
+    width: 210px;
+    height: 250px;
+    border-radius: 22px;
+    padding: 1rem;
+  }
+
+  .yaf-card h3 {
+    font-size: 1.7rem;
+  }
+
+  .yaf-card p {
+    font-size: 0.82rem;
+  }
+
+  @keyframes yaf-card-flow {
+    from {
+      transform: rotateX(8deg) rotateY(-6deg) rotateZ(-1deg) translateX(0);
+    }
+    to {
+      transform: rotateX(8deg) rotateY(-6deg) rotateZ(-1deg) translateX(-50%);
+    }
+  }
+}
+
+/* ---- Reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .yaf-track {
+    animation: none;
+  }
+}

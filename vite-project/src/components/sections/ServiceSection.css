@@ -1,0 +1,322 @@
+:root {
+  --carousel-radius: 260px;
+}
+
+.service-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: #FFFFF3;
+  padding: 140px 8vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.ss-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* ── Left Column ──────────────────────────────────────────────────── */
+.ss-left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.ss-heading-wrapper {
+  position: relative;
+  max-width: 500px;
+}
+
+.ss-label {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #111;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: -16px;
+}
+
+.ss-highlight-yellow {
+  position: absolute;
+  top: -16px;
+  left: -2%;
+  width: 105%;
+  height: 110px;
+  background-color: #FCFF7C; /* Lime Yellow */
+  z-index: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.ss-heading-wrapper h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(52px, 6vw, 84px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  font-family: 'Clash Display', sans-serif;
+  color: #000000;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ss-word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  perspective: 800px;
+}
+.ss-word {
+  display: inline-block;
+  transform-origin: 0% 100%;
+}
+
+.ss-desc-box {
+  position: relative;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ss-button-wrapper {
+  align-self: flex-start;
+  margin-left: 20%;
+  margin-top: 48px;
+  margin-bottom: 56px;
+}
+
+.ss-desc-box p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #000000;
+  font-family: 'Nunito', sans-serif;
+}
+
+.ss-highlight-green {
+  position: absolute;
+  bottom: -20px;
+  left: 10%;
+  width: 90%;
+  height: 100px;
+  background-color: #D3E4BF; /* Pale green block */
+  z-index: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* ── Right Column (3D Carousel) ──────────────────────────────────── */
+.ss-right {
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+.ss-carousel-scene {
+  width: 280px;
+  height: 380px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-8deg); /* Tilt down slightly to see the 3D ring */
+}
+
+.ss-carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: spin3D 25s infinite linear;
+}
+
+.ss-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes spin3D {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+
+.ss-card {
+  position: absolute;
+  width: 260px;
+  height: 360px;
+  left: 10px;
+  top: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.ss-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.ss-card:hover .ss-card-inner {
+  transform: translateY(-8px);
+}
+
+/* Shining Animation */
+.ss-card-shine {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 3s infinite;
+  z-index: 1;
+}
+
+@keyframes shine {
+  0% {
+    left: -150%;
+  }
+  20% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.ss-card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px 24px;
+  background: transparent;
+  color: #000000;
+  z-index: 2;
+}
+
+.ss-card-number {
+  position: absolute;
+  top: 32px;
+  left: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+  font-family: 'Nunito', sans-serif;
+}
+
+.ss-card-content h3 {
+  margin: 0 0 12px 0;
+  font-size: 26px;
+  font-weight: 800;
+  font-family: 'Clash Display', sans-serif;
+}
+
+.ss-card-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ── Mobile Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  :root {
+    --carousel-radius: 160px;
+  }
+
+  .ss-container {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+
+  .ss-pill {
+    margin-left: 0;
+  }
+  
+  .ss-right {
+    height: 400px;
+  }
+
+  .ss-carousel-scene {
+    width: 200px;
+    height: 280px;
+  }
+
+  .ss-card {
+    width: 180px;
+    height: 260px;
+  }
+  
+  .ss-card-content {
+    padding: 20px 16px;
+  }
+
+  .ss-card-number {
+    top: 20px;
+    left: 16px;
+    font-size: 12px;
+  }
+
+  .ss-card-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .ss-card-content p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .ss-highlight-yellow {
+    height: 60px;
+  }
+  
+  .ss-highlight-green {
+    height: 80px;
+  }
+}
+
+/* Marquee Animation */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-container {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: marquee-scroll 25s linear infinite;
+}

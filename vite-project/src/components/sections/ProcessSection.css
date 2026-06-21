@@ -1,0 +1,236 @@
+.process-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 8vw;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 90px;
+  background: #7F7CFF;
+  color: #000000;
+  overflow: hidden;
+  border-radius: 2rem 2rem 0 0;
+}
+
+/* Grid texture */
+.process-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 80%, transparent);
+  pointer-events: none;
+}
+
+/* ── Left Column (Sticky) ────────────────────────────────────────── */
+.process-left {
+  position: sticky;
+  top: 140px;
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── 3D White Cuboid ────────────────────────────────────────── */
+.ps-cube-container {
+  width: 176px; /* h-44 w-44 equivalent */
+  height: 176px;
+  perspective: 1000px;
+}
+
+.ps-cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.ps-cube-face {
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.ps-cube-front  { transform: rotateY(0deg) translateZ(88px); background: #ffffff; }
+.ps-cube-right  { transform: rotateY(90deg) translateZ(88px); background: #f9f9f9; }
+.ps-cube-back   { transform: rotateY(180deg) translateZ(88px); background: #f0f0f0; }
+.ps-cube-left   { transform: rotateY(-90deg) translateZ(88px); background: #f9f9f9; }
+.ps-cube-top    { transform: rotateX(90deg) translateZ(88px); background: #ffffff; }
+.ps-cube-bottom { transform: rotateX(-90deg) translateZ(88px); background: #e8e8e8; }
+
+@keyframes ps-spin-cube {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.process-label {
+  margin-bottom: 20px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #111;
+  font-family: 'Nunito', sans-serif;
+  opacity: 0; /* animated in by GSAP */
+}
+
+.process-left h2 {
+  margin: 0 0 28px;
+  font-size: clamp(48px, 6vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  max-width: 620px;
+  font-weight: 600;
+  font-family: 'Clash Display', sans-serif;
+  color: #000000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.process-intro {
+  max-width: 420px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.62);
+  font-family: 'Nunito', sans-serif;
+  margin: 32px 0 0;
+}
+
+/* Word-split animation helpers */
+.ps-word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.ps-word {
+  display: inline-block;
+  opacity: 0; /* GSAP handles reveal */
+}
+
+/* ── Right Column (Steps) ────────────────────────────────────────── */
+.process-right {
+  padding-top: 70px;
+  position: relative;
+  z-index: 3;
+}
+
+/* ── Individual step ──────────────────────────────────────────────── */
+.process-step {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+/* Ambient glow blob */
+.ps-glow {
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  width: 340px;
+  height: 340px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0; /* GSAP scrub */
+  z-index: 0;
+}
+
+/* Top accent line */
+.ps-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #000000 0%, transparent 100%);
+  transform-origin: left center;
+  transform: scaleX(0); /* GSAP animates */
+}
+
+.process-number {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 22px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: #000000;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  opacity: 0; /* GSAP */
+}
+
+.process-step h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 24px;
+  font-size: clamp(52px, 6vw, 96px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  color: #050505;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+/* Step title word-split helpers */
+.ps-step-word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  perspective: 600px;
+}
+.ps-step-word {
+  display: inline-block;
+  opacity: 0; /* GSAP */
+}
+
+.process-step p {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.62);
+  font-family: 'Nunito', sans-serif;
+  opacity: 0; /* GSAP */
+}
+
+/* ── Mobile ───────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .process-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 90px 24px;
+    min-height: auto;
+  }
+
+  .process-left {
+    position: relative;
+    top: auto;
+  }
+
+  .process-right {
+    padding-top: 0;
+  }
+
+  .process-step {
+    min-height: auto;
+    padding: 55px 0;
+  }
+
+  /* Removed GSAP overrides for mobile to allow smooth wordings effect */
+
+  .ps-glow {
+    display: none;
+  }
+}

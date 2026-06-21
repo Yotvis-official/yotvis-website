@@ -1,0 +1,20 @@
+/* ── Services Cards Section ─────────────────────────────────── */
+.services-cards-section {
+  position: relative;
+}
+
+/* ── Service card hover shadow ──────────────────────────────── */
+.service-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 243, 0.12),
+    0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Responsive tweaks ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  .services-cards-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 5rem;
+  }
+}

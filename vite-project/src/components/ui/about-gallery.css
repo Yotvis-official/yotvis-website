@@ -1,0 +1,336 @@
+/* ===================================================
+   About Gallery — scoped to .yag-* and .yotvis-about
+   =================================================== */
+
+.yotvis-about {
+  position: relative;
+  height: 500vh;
+}
+
+.yag-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #d3e4bf;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Marquees ── */
+
+.yag-marquee-wrap {
+  flex: 0 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 0.75rem 0;
+  z-index: 20;
+}
+
+.yag-marquee-inner {
+  display: inline-flex;
+  gap: 3rem;
+  animation: yagMarquee 40s linear infinite;
+}
+
+.yag-marquee-inner.reverse {
+  animation: yagMarqueeRev 40s linear infinite;
+}
+
+.yag-marquee-inner span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.45);
+  flex-shrink: 0;
+}
+
+@keyframes yagMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes yagMarqueeRev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── Main area ── */
+
+.yag-main {
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Left content panel ── */
+
+.yag-panel {
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30%;
+  max-width: 400px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.yag-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.yag-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}
+
+.yag-slide-num {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.45);
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  padding-bottom: 6px;
+  margin-bottom: 1.4rem;
+  font-family: ui-monospace, monospace;
+}
+
+.yag-slide h2 {
+  margin: 0 0 1.4rem;
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  font-weight: 700;
+  color: #0d0d0d;
+}
+
+.yag-slide p {
+  font-size: 1rem;
+  line-height: 1.72;
+  color: rgba(0,0,0,0.58);
+  font-weight: 300;
+  margin: 0 0 2rem;
+}
+
+.yag-meta {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  row-gap: 0.65rem;
+  border-top: 1px solid rgba(0,0,0,0.14);
+  padding-top: 1.2rem;
+}
+
+.yag-meta-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(0,0,0,0.4);
+  align-self: center;
+  font-family: ui-monospace, monospace;
+}
+
+.yag-meta-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+/* ── 3D Scene ── */
+
+.yag-scene {
+  position: absolute;
+  inset: 0;
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+}
+
+.yag-track {
+  position: absolute;
+  top: 50%;
+  left: 62%;
+  display: flex;
+  gap: 60px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ── Cards ── */
+
+.yag-card {
+  flex: 0 0 auto;
+  width: 340px;
+  height: 440px;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.07),
+    0 28px 72px rgba(0,0,0,0.14);
+  transition: box-shadow 0.4s ease;
+  transform: translateY(-50%);
+  cursor: default;
+  backface-visibility: hidden;
+}
+
+.yag-card-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: ui-monospace, monospace;
+  opacity: 0.55;
+}
+
+.yag-card-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #7f7cff;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.yag-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+  font-weight: 900;
+}
+
+.yag-card-body {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  opacity: 0.7;
+}
+
+.yag-card-line {
+  width: 36px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+/* Card themes */
+.yag-card-black {
+  background: #000000;
+  color: #fffff3;
+  border-color: rgba(252,255,124,0.18);
+}
+.yag-card-lime {
+  background: #fcff7c;
+  color: #000000;
+  border-color: rgba(0,0,0,0.08);
+}
+.yag-card-lime .yag-card-dot { background: #000; }
+.yag-card-cream {
+  background: #fffff3;
+  color: #000000;
+  border-color: rgba(0,0,0,0.1);
+}
+.yag-card-cream .yag-card-dot { background: #7f7cff; }
+.yag-card-purple {
+  background: #7f7cff;
+  color: #fffff3;
+  border-color: rgba(255,255,255,0.16);
+}
+
+/* ── Scroll hint ── */
+
+.yag-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 6%;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(0,0,0,0.38);
+  font-family: ui-monospace, monospace;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.yag-scroll-hint::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: rgba(0,0,0,0.3);
+}
+
+/* ── Progress dots ── */
+
+.yag-dots {
+  position: absolute;
+  bottom: 2rem;
+  right: 6%;
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+
+.yag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.18);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.yag-dot.active {
+  background: #000;
+  transform: scale(1.4);
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 768px) {
+  .yag-panel {
+    left: 5%;
+    width: 90%;
+    max-width: none;
+    top: auto;
+    bottom: 3rem;
+    transform: none;
+  }
+
+  .yag-slide h2 { font-size: 2rem; }
+  .yag-slide p  { font-size: 0.85rem; }
+
+  .yag-track { left: 50%; gap: 40px; }
+
+  .yag-card {
+    width: 240px;
+    height: 320px;
+    border-radius: 16px;
+    padding: 1.4rem;
+  }
+  .yag-card h3 { font-size: 1.7rem; }
+  .yag-card-body { font-size: 0.78rem; }
+
+  .yag-meta { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yag-marquee-inner { animation: none; }
+}

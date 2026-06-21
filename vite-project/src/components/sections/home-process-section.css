@@ -1,0 +1,187 @@
+.yotvis-process-section {
+  position: relative;
+  overflow: hidden;
+  background: #7F7CFF;
+  color: #fffff3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(6rem, 9vw, 10rem) clamp(1.5rem, 5vw, 5rem) clamp(6rem, 9vw, 10rem) clamp(2.5rem, 7vw, 9rem);
+}
+
+.yp-bg-word {
+  position: absolute;
+  right: -3rem;
+  top: 4rem;
+  font-size: clamp(7rem, 20vw, 18rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  color: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+.yp-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.yp-left {
+  position: sticky;
+  top: 140px;
+  align-self: start;
+}
+
+.yp-kicker {
+  margin: 0 0 1.2rem;
+  color: #fcff7c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.yp-left h2 {
+  margin: 0;
+  max-width: 560px;
+  font-size: clamp(3.2rem, 6vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  color: #000000;
+}
+
+.yp-left p:not(.yp-kicker) {
+  margin: 1.6rem 0 0;
+  max-width: 460px;
+  color: rgba(255, 255, 243, 0.62);
+  font-size: clamp(16px, 1.4vw, 22px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.yp-right {
+  position: relative;
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding-left: 2.5rem;
+}
+
+.yp-line {
+  position: absolute;
+  left: 0.45rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  transform-origin: top;
+}
+
+.yp-progress-line {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fcff7c;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.yp-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.4rem;
+  min-height: 190px;
+  will-change: transform, opacity;
+}
+
+.yp-number {
+  display: flex;
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #000000;
+  color: #fffff3;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.yp-step h3 {
+  margin: 0 0 0.2rem;
+  font-size: clamp(2rem, 3.8vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+
+.yp-step p {
+  margin: 0.9rem 0 0;
+  max-width: 560px;
+  color: rgba(255, 255, 243, 0.62);
+  font-size: clamp(16px, 1.4vw, 22px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Lime accent on step 3 */
+.yp-step:nth-child(3) .yp-number {
+  background: #fcff7c;
+  color: #000000;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+  .yp-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .yp-left {
+    position: relative;
+    top: auto;
+  }
+
+  .yp-right {
+    padding-left: 1.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .yotvis-process-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .yp-left h2 {
+    font-size: clamp(3rem, 14vw, 4.8rem);
+  }
+
+  .yp-step {
+    min-height: 170px;
+    gap: 1rem;
+  }
+
+  .yp-number {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yp-step {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .yp-progress-line {
+    transform: scaleY(1) !important;
+  }
+}

@@ -1,0 +1,355 @@
+.yotvis-hyper-about {
+  position: relative;
+  isolation: isolate;
+}
+
+.yh-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #000000;
+  perspective: 1000px;
+  cursor: crosshair;
+}
+
+.yh-world {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 3;
+}
+
+.yh-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.yh-card {
+  width: min(340px, 82vw);
+  height: 460px;
+  transform: translate(-50%, -50%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 243, 0.14);
+  background: rgba(255, 255, 243, 0.055);
+  color: #fffff3;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 24px 80px rgba(0, 0, 0, 0.55);
+  transition:
+    border-color 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+
+
+.yh-card::before,
+.yh-card::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border: 1px solid transparent;
+  transition: 300ms ease;
+}
+
+.yh-card::before {
+  top: -1px;
+  left: -1px;
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+}
+
+.yh-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom-color: #ffffff;
+  border-right-color: #ffffff;
+}
+
+
+
+.yh-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 243, 0.12);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.yh-card-id {
+  color: #fcff7c;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+}
+
+.yh-card-dot {
+  width: 10px;
+  height: 10px;
+  background: #7f7cff;
+}
+
+.yh-card h3 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  line-height: 0.88;
+  letter-spacing: -0.08em;
+  font-weight: 900;
+  color: #fffff3;
+}
+
+.yh-card p {
+  max-width: 25ch;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 243, 0.72);
+}
+
+.yh-card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.72rem;
+  color: rgba(211, 228, 191, 0.65);
+}
+
+.yh-card-num {
+  position: absolute;
+  right: 1.6rem;
+  bottom: 1.2rem;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 243, 0.05);
+  line-height: 1;
+}
+
+.yh-big-text {
+  transform: translate(-50%, -50%);
+  font-size: clamp(6rem, 15vw, 14rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.14);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.yh-star {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+}
+
+.yh-center-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-2rem);
+  pointer-events: none;
+  text-align: center;
+  color: #fffff3;
+}
+
+.yh-center-copy p {
+  margin-bottom: 1.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.yh-center-copy h2 {
+  margin: 0;
+  max-width: 1000px;
+  font-size: clamp(3rem, 7vw, 6.8rem);
+  line-height: 0.9;
+  letter-spacing: normal;
+  word-spacing: 0.1em;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+
+
+.yh-hud {
+  position: absolute;
+  inset: 2rem;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.yh-hud-top,
+.yh-hud-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.yh-hud strong {
+  color: #fcff7c;
+}
+
+.yh-hud-line {
+  flex: 1;
+  height: 1px;
+  margin: 0 1rem;
+  background: rgba(255, 255, 255, 0.16);
+  position: relative;
+}
+
+.yh-hud-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  background: #7f7cff;
+}
+
+.yh-hud-side {
+  align-self: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+
+
+.yh-card-vision {
+  background: #fffff3;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+.yh-card-mission {
+  background: #fcff7c;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+.yh-card-process {
+  background: #000000;
+  color: #fffff3;
+  border-color: rgba(255, 255, 243, 0.18);
+}
+
+.yh-card-values {
+  background: #7f7cff;
+  color: #fffff3;
+  border-color: rgba(255, 255, 243, 0.18);
+}
+
+.yh-card-mission h3,
+.yh-card-vision h3 {
+  color: #000000;
+}
+
+.yh-card-mission p,
+.yh-card-vision p {
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.yh-card-mission .yh-card-footer,
+.yh-card-vision .yh-card-footer {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.yh-card-values h3,
+.yh-card-process h3 {
+  color: #fffff3;
+}
+
+.yh-card-values p,
+.yh-card-process p {
+  color: rgba(255, 255, 243, 0.75);
+}
+
+@media (max-width: 768px) {
+  .yotvis-hyper-about {
+    height: auto;
+    min-height: 100vh;
+    background: #000000;
+  }
+
+  .yh-viewport {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 6rem 1.25rem;
+  }
+
+  .yh-world {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none !important;
+    display: grid;
+    gap: 1rem;
+    z-index: 4;
+  }
+
+  .yh-item {
+    position: relative;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .yh-star,
+  .yh-big-text,
+  .yh-hud-side {
+    display: none;
+  }
+
+  .yh-card {
+    width: 100%;
+    height: auto;
+    min-height: 18rem;
+    transform: none;
+  }
+
+  .yh-center-copy {
+    position: relative;
+    margin-bottom: 3rem;
+    transform: none;
+  }
+
+  .yh-center-copy h2 {
+    color: #ffffff;
+  }
+
+  .yh-hud {
+    inset: 1rem;
+    font-size: 0.56rem;
+  }
+}
