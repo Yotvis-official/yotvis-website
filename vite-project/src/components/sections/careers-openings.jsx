@@ -127,9 +127,9 @@ export default function OpeningsSection() {
     <section 
       id="openings" 
       ref={sectionRef}
-      className="relative w-full bg-[#D3E4BF] py-24 px-6 md:px-16"
+      className="relative w-full bg-[#D3E4BF] py-24"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12">
         <div className="mb-12 openings-header">
           <h2 className="text-[clamp(2.5rem,5vw,5rem)] font-clash font-medium leading-[1] tracking-tight text-black mb-4">
             Current Openings

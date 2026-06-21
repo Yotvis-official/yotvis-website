@@ -100,7 +100,7 @@ export default function ContactPage() {
         keywords="Contact Yotvis, Digital Agency Contact, Web Development Query"
         faqSchema={contactFaqs}
       />
-      <section className="relative pt-32 pb-24 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto z-10 flex flex-col justify-center min-h-[80vh]">
+      <section className="relative pt-32 pb-24 w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 z-10 flex flex-col justify-center min-h-[80vh]">
         
         {/* Main Banner Area */}
         <div className="relative w-full max-w-[1100px] mx-auto flex flex-col md:block min-h-[450px] mb-24 mt-10">

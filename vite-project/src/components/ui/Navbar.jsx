@@ -45,8 +45,9 @@ export default function Navbar() {
 
   return (
     <>
-    <nav className="fixed top-0 left-0 w-full z-[100] flex justify-center pt-6 pointer-events-none">
-      <div className="pointer-events-auto w-[94%] max-w-7xl h-16 bg-black rounded-full flex items-center justify-between px-6 md:px-8 shadow-[0_4px_40px_rgba(0,0,0,0.35)]">
+    <nav className="fixed top-0 left-0 right-0 z-[100] pt-6 pointer-events-none">
+      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-10 xl:px-12">
+        <div className="pointer-events-auto w-full h-16 bg-black rounded-full flex items-center justify-between px-6 md:px-8 shadow-[0_4px_40px_rgba(0,0,0,0.35)]">
 
         {/* Logo */}
         <button
@@ -107,6 +108,7 @@ export default function Navbar() {
             <line className="hamburger-bot" x1="4" x2="20" y1="18" y2="18" style={{ transformOrigin: "center" }} />
           </svg>
         </button>
+        </div>
       </div>
     </nav>
 

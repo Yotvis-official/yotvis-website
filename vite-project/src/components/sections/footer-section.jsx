@@ -9,7 +9,6 @@ export default function FooterSection() {
     <footer 
       id="contact" 
       className="relative w-full min-h-[80vh] bg-[#000000] text-[#FFFFF3] overflow-hidden rounded-t-[3rem] md:rounded-t-[4rem] z-20 flex flex-col pt-12 pb-8"
-      style={{ paddingLeft: "clamp(2.5rem, 7vw, 9rem)", paddingRight: "clamp(1.5rem, 5vw, 5rem)" }}
     >
       {/* Blurred Background Logo Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
@@ -21,7 +20,7 @@ export default function FooterSection() {
         />
       </div>
 
-      <div className="w-full relative z-10 flex-1 flex flex-col">
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 relative z-10 flex-1 flex flex-col">
         
         {/* Top Area: Heading & CTA */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">

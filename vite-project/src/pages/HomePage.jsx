@@ -198,7 +198,7 @@ export default function HomePage() {
         <div className="absolute top-0 right-0 w-full h-[60%] bg-[#FFFF66] opacity-30 blur-3xl rounded-full md:hidden pointer-events-none translate-x-1/2 -translate-y-1/4" />
 
         {/* Hero Content */}
-        <div className="flex-1 w-full max-w-[1400px] px-8 md:px-12 flex flex-col justify-center items-start relative z-10">
+        <div className="flex-1 w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 flex flex-col justify-center items-start relative z-10">
           <div className="w-full flex flex-col items-start text-left space-y-8 z-10 relative">
 
             {/* Hero Title */}

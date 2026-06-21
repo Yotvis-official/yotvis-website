@@ -82,7 +82,7 @@ export default function WebDevelopmentPage() {
       />
       
       {/* Back Button */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pt-32">
+      <div className="relative z-20 max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 pt-32">
         <button 
           onClick={() => navigateTo("/services")} 
           className="gsap-hero-text group text-sm md:text-base font-semibold font-nunito tracking-wider text-black/60 hover:text-black transition-colors flex items-center gap-2"
@@ -92,7 +92,7 @@ export default function WebDevelopmentPage() {
         </button>
       </div>
 
-      <section className="relative pt-12 pb-24 px-6 md:px-12 max-w-7xl mx-auto min-h-[50vh] flex items-center overflow-hidden">
+      <section className="relative pt-12 pb-24 w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 min-h-[50vh] flex items-center overflow-hidden">
         
         {/* Animated Blue Background (Yotvis Brand Color) */}
         <div className="gsap-blue-bg absolute top-0 right-0 w-[95%] md:w-[85%] h-full bg-[#7F7CFF] z-0 mix-blend-multiply opacity-20 md:opacity-100"></div>
@@ -118,7 +118,7 @@ export default function WebDevelopmentPage() {
       <FaqSection faqsData={webDevFaqs} />
 
       {/* Last Updated Date for AEO Freshness */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 border-t border-black/10 mt-10">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 py-8 border-t border-black/10 mt-10">
         <p className="text-sm text-black/40 font-nunito">
           Last updated: <time dateTime="2026-05-20">May 2026</time>
         </p>

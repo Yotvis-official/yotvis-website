@@ -66,7 +66,7 @@ export default function BookCallSection() {
         </h2>
       </div>
 
-      <div className="w-full max-w-4xl px-6 md:px-8 z-10 relative flex flex-col items-center justify-center mx-auto text-center">
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 z-10 relative flex flex-col items-center justify-center text-center">
         
         {/* Top Content */}
         <div className="w-full flex flex-col items-center mb-12">

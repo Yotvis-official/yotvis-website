@@ -6,7 +6,7 @@
   position: relative;
   min-height: 100vh;
   background-color: #FFFFF3;
-  padding: 140px 8vw;
+  padding: 140px 0;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -17,9 +17,23 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
   align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .ss-container {
+    padding-left: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ss-container {
+    padding-left: 48px;
+  }
 }
 
 /* ── Left Column ──────────────────────────────────────────────────── */

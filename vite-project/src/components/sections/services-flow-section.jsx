@@ -19,7 +19,7 @@ export default function ServicesFlowSection() {
           <p className="text-xs md:text-sm font-semibold tracking-widest uppercase font-clash text-[#FCFF7C] opacity-90">
             Process
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-sm md:text-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-xs md:text-base">
             <div>
               <span className="block font-medium text-[#FCFF7C] font-clash tracking-wide">Step 1: Brand Understanding</span>
               <p className="mt-1 opacity-90">We understand your business, audience, values, and the impression your brand should create.</p>
@@ -55,7 +55,7 @@ export default function ServicesFlowSection() {
           <p className="text-xs md:text-sm font-semibold tracking-widest uppercase font-clash text-[#7F7CFF] opacity-90">
             Process
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-sm md:text-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-xs md:text-base">
             <div>
               <span className="block font-medium text-[#7F7CFF] font-clash tracking-wide">Step 1: Research & Insights</span>
               <p className="mt-1 opacity-90">We study user behavior, business goals, and market direction to create a strong project foundation.</p>
@@ -91,7 +91,7 @@ export default function ServicesFlowSection() {
           <p className="text-xs md:text-sm font-semibold tracking-widest uppercase font-clash text-[#FCFF7C] opacity-90">
             Process
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-sm md:text-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-xs md:text-base">
             <div>
               <span className="block font-medium text-[#FCFF7C] font-clash tracking-wide">Step 1: Planning & Requirements</span>
               <p className="mt-1 opacity-90">We understand your business goals, website purpose, target audience, pages, features, and content needs before development begins.</p>
@@ -127,7 +127,7 @@ export default function ServicesFlowSection() {
           <p className="text-xs md:text-sm font-semibold tracking-widest uppercase font-clash text-[#7F7CFF] opacity-90">
             Process
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-sm md:text-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-xs md:text-base">
             <div>
               <span className="block font-medium text-[#7F7CFF] font-clash tracking-wide">Step 1: Requirement & Feature Planning</span>
               <p className="mt-1 opacity-90">We understand your app idea, users, core features, goals, and platform needs before development begins.</p>
@@ -163,7 +163,7 @@ export default function ServicesFlowSection() {
           <p className="text-xs md:text-sm font-semibold tracking-widest uppercase font-clash text-[#7F7CFF] opacity-90">
             Process
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-sm md:text-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-xs md:text-base">
             <div>
               <span className="block font-medium text-[#7F7CFF] font-clash tracking-wide">Step 1: Process Understanding</span>
               <p className="mt-1 opacity-90">We understand your current workflow, repeated tasks, business goals, and areas where automation can save time or reduce manual effort.</p>
@@ -199,7 +199,7 @@ export default function ServicesFlowSection() {
           <p className="text-xs md:text-sm font-semibold tracking-widest uppercase font-clash text-[#FCFF7C] opacity-90">
             Process
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-sm md:text-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-xs md:text-base">
             <div>
               <span className="block font-medium text-[#FCFF7C] font-clash tracking-wide">Step 1: Cloud Requirement Planning</span>
               <p className="mt-1 opacity-90">We understand your deployment, storage, performance, and scalability needs.</p>
@@ -247,24 +247,24 @@ export default function ServicesFlowSection() {
     <section id="services" className="relative z-30">
       <FlowArt>
         {panels.map((panel, index) => (
-          <FlowSection key={panel.id} className={`gsap-service-panel ${panel.bg} ${panel.text} pt-28 pb-6 px-6 md:pt-32 md:pb-8 md:px-8 lg:pt-36 lg:pb-10 lg:px-10 flex flex-col justify-between`}>
-            <div className="flex flex-col w-full h-full justify-between max-w-7xl mx-auto">
+          <FlowSection key={panel.id} className={`gsap-service-panel ${panel.bg} ${panel.text} pt-20 pb-4 md:pt-24 md:pb-6 lg:pt-28 lg:pb-8 flex flex-col justify-between`}>
+            <div className="flex flex-col w-full h-full justify-between max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12">
               {/* Top Label */}
               <div className="w-full">
-                <p className={`gsap-service-label text-sm md:text-base font-semibold tracking-widest uppercase mb-4 font-clash ${panel.accent}`}>
+                <p className={`gsap-service-label text-sm md:text-base font-semibold tracking-widest uppercase mb-2 font-clash ${panel.accent}`}>
                   {panel.label}
                 </p>
                 <hr className={panel.border} />
               </div>
 
               {/* Huge Heading */}
-              <div className="flex-1 flex flex-col justify-center py-4">
+              <div className="flex-1 flex flex-col justify-center py-2">
                 {index === 0 ? (
-                  <h1 className="gsap-service-heading text-[clamp(3rem,9vw,10rem)] font-black uppercase leading-[0.85] tracking-tight font-clash">
+                  <h1 className="gsap-service-heading text-[clamp(2.5rem,7vw,6.5rem)] font-black uppercase leading-[0.85] tracking-tight font-clash">
                     {panel.heading}
                   </h1>
                 ) : (
-                  <h2 className="gsap-service-heading text-[clamp(3rem,9vw,10rem)] font-black uppercase leading-[0.85] tracking-tight font-clash">
+                  <h2 className="gsap-service-heading text-[clamp(2.5rem,7vw,6.5rem)] font-black uppercase leading-[0.85] tracking-tight font-clash">
                     {panel.heading}
                   </h2>
                 )}
@@ -276,7 +276,7 @@ export default function ServicesFlowSection() {
                 <div className="max-w-4xl text-base md:text-xl font-medium leading-relaxed">
                   {panel.paragraph}
                   {panel.link && (
-                    <a href={panel.link} className={`inline-block mt-8 text-sm md:text-base font-bold uppercase tracking-widest ${panel.accent} hover:opacity-80 transition-opacity`}>
+                    <a href={panel.link} className={`inline-block mt-4 text-sm md:text-base font-bold uppercase tracking-widest ${panel.accent} hover:opacity-80 transition-opacity`}>
                       View Full Details →
                     </a>
                   )}

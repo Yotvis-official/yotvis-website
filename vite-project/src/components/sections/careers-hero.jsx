@@ -2,10 +2,10 @@ import YotvisAnimatedBg from "@/components/ui/yotvis-animated-bg";
 
 export default function CareersHero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-black px-6 py-32 text-[#FFFFF3] md:px-16">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-black py-32 text-[#FFFFF3]">
       <YotvisAnimatedBg />
 
-      <div className="relative z-10 mx-auto max-w-6xl w-full">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 lg:px-10 xl:px-12">
         <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-[#FCFF7C]">
           Careers at Yotvis
         </p>

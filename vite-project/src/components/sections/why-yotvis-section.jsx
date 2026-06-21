@@ -60,7 +60,7 @@ export default function WhyYotvisSection() {
 
   return (
     <section ref={sectionRef} className="why-yotvis-section">
-      <div className="w-full max-w-[1400px] mx-auto">
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12">
         <h2 className="why-text m-0 p-0 font-normal">
           WHY
           <span>WHY NOT</span>
@@ -71,7 +71,7 @@ export default function WhyYotvisSection() {
         </div>
 
         {/* Concluding Statement */}
-        <div className="why-footer-text mt-40 md:mt-56 max-w-[1200px] mx-auto flex flex-col md:flex-row gap-12 md:gap-24 text-[#FFFFF3]/80 font-nunito px-4 md:px-0">
+        <div className="why-footer-text mt-40 md:mt-56 max-w-[1200px] mx-auto flex flex-col md:flex-row gap-12 md:gap-24 text-[#FFFFF3]/80 font-nunito">
           <p className="text-[1.3rem] md:text-[1.7rem] leading-relaxed flex-1 font-medium max-w-[600px]">
             At Yotvis, every project begins with understanding before execution. We define the right direction, explain the process clearly, and build with practical thinking, keeping the work focused and aligned with what the business actually needs.
           </p>

@@ -156,8 +156,8 @@ export default function FaqSection({
   };
 
   return (
-    <section ref={sectionRef} className={`w-full bg-[#FFFFF3] py-24 md:py-32 px-6 md:px-12 lg:px-20 relative z-10 ${className}`}>
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 md:gap-24">
+    <section ref={sectionRef} className={`w-full bg-[#FFFFF3] py-24 md:py-32 relative z-10 ${className}`}>
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 md:gap-24">
         
         {/* Left Content */}
         <div className="gsap-faq-left flex flex-col justify-start">

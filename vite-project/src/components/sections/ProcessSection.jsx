@@ -216,53 +216,55 @@ export default function ProcessSection() {
         </div>
       </div>
 
-      <div className="process-left">
-        <div>
-          <p className="process-label" ref={labelRef}>
-            Our Process
-          </p>
-          <AnimatedText 
-            text="How We Bring Ideas to Life"
-            underlineDuration={1.2}
-            className="items-start !w-full"
-          />
-          <p className="process-intro" ref={introRef} style={{ opacity: 0 }}>
-            From first idea to final launch, every step is shaped with clarity,
-            direction, and execution.
-          </p>
-        </div>
-      </div>
-
-      <div className="process-right">
-        {steps.map((step, index) => (
-          <div
-            className="process-step"
-            key={index}
-            ref={(el) => (stepRefs.current[index] = el)}
-          >
-            {/* Ambient glow blob */}
-            <div className="ps-glow" />
-
-            {/* Top accent line */}
-            <div
-              className="ps-accent-line"
-              ref={(el) => (lineRefs.current[index] = el)}
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-[60px] md:gap-[90px] relative z-10">
+        <div className="process-left">
+          <div>
+            <p className="process-label" ref={labelRef}>
+              Our Process
+            </p>
+            <AnimatedText 
+              text="How We Bring Ideas to Life"
+              underlineDuration={1.2}
+              className="items-start !w-full"
             />
-
-            <span className="process-number">0{index + 1}</span>
-
-            <h3>
-              {step.title.split(" ").map((word, wi) => (
-                <span className="ps-step-word-wrap" key={wi}>
-                  <span className="ps-step-word">{word}</span>
-                  {wi < step.title.split(" ").length - 1 ? "\u00a0" : ""}
-                </span>
-              ))}
-            </h3>
-
-            <p>{step.text}</p>
+            <p className="process-intro" ref={introRef} style={{ opacity: 0 }}>
+              From first idea to final launch, every step is shaped with clarity,
+              direction, and execution.
+            </p>
           </div>
-        ))}
+        </div>
+
+        <div className="process-right">
+          {steps.map((step, index) => (
+            <div
+              className="process-step"
+              key={index}
+              ref={(el) => (stepRefs.current[index] = el)}
+            >
+              {/* Ambient glow blob */}
+              <div className="ps-glow" />
+
+              {/* Top accent line */}
+              <div
+                className="ps-accent-line"
+                ref={(el) => (lineRefs.current[index] = el)}
+              />
+
+              <span className="process-number">0{index + 1}</span>
+
+              <h3>
+                {step.title.split(" ").map((word, wi) => (
+                  <span className="ps-step-word-wrap" key={wi}>
+                    <span className="ps-step-word">{word}</span>
+                    {wi < step.title.split(" ").length - 1 ? "\u00a0" : ""}
+                  </span>
+                ))}
+              </h3>
+
+              <p>{step.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

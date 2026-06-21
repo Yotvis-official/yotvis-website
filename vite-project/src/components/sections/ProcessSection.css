@@ -1,10 +1,9 @@
 .process-section {
   position: relative;
   min-height: 100vh;
-  padding: 120px 8vw;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 90px;
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
   background: #7F7CFF;
   color: #000000;
   overflow: hidden;
@@ -208,9 +207,7 @@
 /* ── Mobile ───────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .process-section {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 90px 24px;
+    padding: 90px 0;
     min-height: auto;
   }
 
