@@ -99,6 +99,12 @@ export default function UiUxDesignPage() {
 
         <article className="relative z-10 max-w-3xl">
           <h1 className="gsap-hero-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">UI/UX<br/>Design</h1>
+          
+          {/* BLUF Summary for AI Extraction */}
+          <p className="gsap-hero-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+            UI/UX design is the process of crafting intuitive, visually stunning, and user-centric interfaces. Yotvis balances form and function to deliver high-converting experiences for websites and mobile applications.
+          </p>
+
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What is UI/UX Design?</h2>

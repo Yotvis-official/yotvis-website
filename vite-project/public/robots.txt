@@ -1,4 +1,25 @@
+# Allow All AI Bots (Search & Training) for Maximum GEO Visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Allow All Standard Search Engines
 User-agent: *
 Allow: /
 
+# Sitemap Location
 Sitemap: https://yotvis.com/sitemap.xml

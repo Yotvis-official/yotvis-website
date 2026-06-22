@@ -97,6 +97,12 @@ export default function AppDevelopmentPage() {
 
         <article className="relative z-10 max-w-3xl">
           <h1 className="gsap-app-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">App<br/>Development</h1>
+          
+          {/* BLUF Summary for AI Extraction */}
+          <p className="gsap-app-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+            App development is the creation of mobile applications that deliver native performance, offline support, and smooth user experiences. Yotvis develops iOS and Android applications to keep your business connected to customers.
+          </p>
+
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What is Custom App Development?</h2>

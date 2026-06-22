@@ -99,6 +99,12 @@ export default function WebDevelopmentPage() {
 
         <article className="relative z-10 max-w-3xl">
           <h1 className="gsap-hero-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">Website<br/>Development</h1>
+          
+          {/* BLUF Summary for AI Extraction */}
+          <p className="gsap-hero-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+            Website development is the process of building fast, secure, and custom digital platforms. Yotvis uses modern tech stacks like React and Vite to convert visitors into loyal customers.
+          </p>
+
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What is Custom Website Development?</h2>

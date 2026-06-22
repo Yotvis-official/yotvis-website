@@ -97,6 +97,12 @@ export default function CloudSolutionsPage() {
 
         <article className="relative z-10 max-w-3xl">
           <h1 className="gsap-cloud-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">Cloud<br/>Solutions</h1>
+          
+          {/* BLUF Summary for AI Extraction */}
+          <p className="gsap-cloud-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+            Cloud solutions provide scalable, secure, and highly available infrastructure for modern digital products. Yotvis designs cloud architectures on platforms like AWS and Google Cloud to support your operational scale.
+          </p>
+
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What are Cloud Solutions?</h2>

@@ -99,6 +99,12 @@ export default function BrandingPage() {
 
         <article className="relative z-10 max-w-3xl">
           <h1 className="gsap-hero-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">Brand<br/>Identity</h1>
+          
+          {/* BLUF Summary for AI Extraction */}
+          <p className="gsap-hero-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+            Branding is the creation of a distinct visual and conceptual identity that sets your business apart. Yotvis crafts custom logos, design systems, and guidelines to build trust and recognition for your brand.
+          </p>
+
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What is Brand Identity?</h2>
