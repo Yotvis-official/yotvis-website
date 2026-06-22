@@ -120,7 +120,9 @@ export default function FooterSection() {
             </div>
 
             <a 
-              href="#" 
+              href="https://www.linkedin.com/company/yotvis/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 text-[#FFFFF3]/70 hover:text-[#FCFF7C] transition-colors text-lg text-left w-fit"
             >
               <svg className="w-5 h-5 text-[#D3E4BF] group-hover:text-[#FCFF7C] transition-colors flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -130,7 +132,9 @@ export default function FooterSection() {
             </a>
 
             <a 
-              href="#" 
+              href="https://www.instagram.com/yotvis_tech" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 text-[#FFFFF3]/70 hover:text-[#FCFF7C] transition-colors text-lg text-left w-fit"
             >
               <svg className="w-5 h-5 text-[#D3E4BF] group-hover:text-[#FCFF7C] transition-colors flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">

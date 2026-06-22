@@ -34,10 +34,10 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
       "name": "Yotvis",
       "url": "https://yotvis.com",
       "logo": "https://yotvis.com/logo.png",
-      "description": "Yotvis is a digital service studio. We are the creators of vision into digital presence, helping brands through web design, development, and AI automation.",
+      "description": "Yotvis is a digital service studio. We are the creators of vision into digital presence, offering premium web design, app development, and AI automation.",
       "sameAs": [
-        "https://www.linkedin.com/company/yotvis",
-        "https://twitter.com/yotvis"
+        "https://www.linkedin.com/company/yotvis/",
+        "https://www.instagram.com/yotvis_tech"
       ]
     },
     {
