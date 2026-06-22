@@ -62,10 +62,11 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Chennai",
-        "addressRegion": "TN",
+        "addressRegion": "Tamil Nadu",
         "postalCode": "600000", 
         "addressCountry": "IN"
-      }
+      },
+      "areaServed": "Chennai, Tamil Nadu, India, and Global"
     }
   ];
 

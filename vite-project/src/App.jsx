@@ -16,6 +16,9 @@ import ServicesPage from "@/pages/ServicesPage";
 import CareersPage  from "@/pages/CareersPage";
 import ContactPage  from "@/pages/ContactPage";
 import BookCallPage from "@/pages/BookCallPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import TermsPage from "@/pages/TermsPage";
+import PrivacyNotice from "@/components/ui/PrivacyNotice";
 
 import BrandingPage from "@/pages/services/BrandingPage";
 import UiUxDesignPage from "@/pages/services/UiUxDesignPage";
@@ -35,6 +38,8 @@ const ROUTE_CONFIG = {
   "/careers":  { label: "Careers",  from: { x: 0,       y: "-100%" }, exitTo: { x: 0,       y: "100%"  } },
   "/contact":     { label: "Contact",     from: { x: "100%",  y: 0 }, exitTo: { x: "-100%", y: 0 } },
   "/book-a-call": { label: "Book a Call", from: { x: "-100%", y: 0 }, exitTo: { x: "100%",  y: 0 } },
+  "/privacy-policy": { label: "Privacy Policy", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/terms-and-conditions": { label: "Terms & Conditions", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
   "/services/branding":       { label: "Branding",       from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
   "/services/ui-ux-design":   { label: "UI/UX",          from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
   "/services/web-development":{ label: "Web Dev",        from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
@@ -144,6 +149,8 @@ function AnimatedApp() {
             <Route path="/services/app-development" element={<AppDevelopmentPage />} />
             <Route path="/services/ai-automation" element={<AiAutomationPage />} />
             <Route path="/services/cloud-solutions" element={<CloudSolutionsPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-and-conditions" element={<TermsPage />} />
             <Route path="*"         element={<HomePage />}     />
           </Routes>
         </motion.div>
@@ -166,6 +173,7 @@ export default function App() {
       <BrowserRouter>
         <div className="w-full min-h-screen bg-[#FFFFF3] font-sans overflow-x-hidden">
           <AnimatedApp />
+          <PrivacyNotice />
         </div>
       </BrowserRouter>
     </HelmetProvider>
