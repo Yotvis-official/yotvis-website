@@ -48,6 +48,11 @@ export default function CareersPage() {
     if (reduceMotion) return;
 
     let refreshTimer;
+    const onResize = () => {
+      clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 200);
+    };
+
     const ctx = gsap.context(() => {
       const panels = gsap.utils.toArray(".gsap-overlap-panel");
       panels.forEach((panel, i) => {
@@ -63,9 +68,12 @@ export default function CareersPage() {
       refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 1000);
     }, containerRef);
 
+    window.addEventListener("resize", onResize);
+
     return () => {
       ctx.revert();
       clearTimeout(refreshTimer);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 

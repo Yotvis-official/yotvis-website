@@ -21,10 +21,15 @@ export function FlowSection({ children, className = "" }) {
 
 export default function FlowArt({ children, className = "" }) {
   const containerRef = useRef(null);
-  
   React.useEffect(() => {
     if (!containerRef.current) return;
     
+    let refreshTimer;
+    const onResize = () => {
+      clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 200);
+    };
+
     const ctx = gsap.context(() => {
       const sections = gsap.utils.toArray(".flow-section", containerRef.current);
       if (sections.length <= 1) return;
@@ -64,9 +69,13 @@ export default function FlowArt({ children, className = "" }) {
     }
     }, containerRef.current);
 
+    window.addEventListener("resize", onResize);
+
     return () => {
       ctx.revert();
       ScrollTrigger.getAll().forEach(t => t.kill());
+      clearTimeout(refreshTimer);
+      window.removeEventListener("resize", onResize);
     };
   }, []); // Run only once on mount
 

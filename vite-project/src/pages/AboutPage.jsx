@@ -44,6 +44,11 @@ export default function AboutPage() {
   useEffect(() => {
     if (!containerRef.current) return;
     let refreshTimer;
+    const onResize = () => {
+      clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 200);
+    };
+
     const ctx = gsap.context(() => {
       /* ── Overlapping panel pinning ───────────────────────────── */
       const panels = gsap.utils.toArray(".gsap-overlap-panel");
@@ -62,9 +67,12 @@ export default function AboutPage() {
       refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 1000);
     }, containerRef);
 
+    window.addEventListener("resize", onResize);
+
     return () => {
       ctx.revert();
       clearTimeout(refreshTimer);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 

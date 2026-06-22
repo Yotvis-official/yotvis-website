@@ -60,37 +60,141 @@ export default function ContactPage() {
       .to(bottomRef.current.children, { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power3.out" }, "-=0.4");
   }, []);
 
-  const handleHoverEnter = () => {
+  const numCols = 15;
+  const numRows = 10;
+  const pixels = Array.from({ length: numCols * numRows });
+
+  const handleMouseMove = (e) => {
+    if (!bgRef.current || !pixelsRef.current.length) return;
+    const rect = bgRef.current.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    pixelsRef.current.forEach((pixel) => {
+      if (!pixel) return;
+      const parent = pixel.parentElement;
+      const pixelLeft = parent.offsetLeft + parent.offsetWidth / 2;
+      const pixelTop = parent.offsetTop + parent.offsetHeight / 2;
+
+      const dx = mouseX - pixelLeft;
+      const dy = mouseY - pixelTop;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      const radius = 220;
+      if (dist < radius) {
+        const factor = (radius - dist) / radius;
+        gsap.to(pixel, {
+          z: factor * 90,
+          rotateX: -dy * factor * 0.22,
+          rotateY: dx * factor * 0.22,
+          opacity: 0.15 + factor * 0.75,
+          scale: 0.9 + factor * 0.35,
+          backgroundColor: factor > 0.5 ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0.75)",
+          borderColor: factor > 0.5 ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0.9)",
+          duration: 0.25,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+      } else {
+        gsap.to(pixel, {
+          z: 0,
+          rotateX: 0,
+          rotateY: 0,
+          opacity: 0,
+          scale: 1,
+          backgroundColor: "rgba(255, 255, 255, 0.2)",
+          borderColor: "rgba(255, 255, 255, 0.4)",
+          duration: 0.4,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+      }
+    });
+  };
+
+  const handleMouseLeaveContainer = () => {
     gsap.to(pixelsRef.current, {
-      opacity: 0.25,
-      scale: 0.8,
-      duration: 0.4,
+      z: 0,
+      rotateX: 0,
+      rotateY: 0,
+      opacity: 0,
+      scale: 1,
+      backgroundColor: "rgba(255, 255, 255, 0.2)",
+      borderColor: "rgba(255, 255, 255, 0.4)",
+      duration: 0.6,
       stagger: {
-        amount: 0.5,
-        grid: [10, 15],
-        from: "random"
+        amount: 0.3,
+        grid: [numRows, numCols],
+        from: "center"
       },
-      ease: "power2.out"
+      overwrite: "auto"
+    });
+  };
+
+  const handleHoverEnter = (e) => {
+    if (!bgRef.current) return;
+    const rect = bgRef.current.getBoundingClientRect();
+    const targetRect = e.currentTarget.getBoundingClientRect();
+    const iconX = (targetRect.left + targetRect.width / 2) - rect.left;
+    const iconY = (targetRect.top + targetRect.height / 2) - rect.top;
+
+    pixelsRef.current.forEach((pixel) => {
+      if (!pixel) return;
+      const parent = pixel.parentElement;
+      const pixelLeft = parent.offsetLeft + parent.offsetWidth / 2;
+      const pixelTop = parent.offsetTop + parent.offsetHeight / 2;
+
+      const dx = iconX - pixelLeft;
+      const dy = iconY - pixelTop;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      const delay = dist * 0.0018;
+
+      gsap.timeline({ overwrite: "auto" })
+        .to(pixel, {
+          z: 70,
+          rotateX: -dy * 0.15,
+          rotateY: dx * 0.15,
+          opacity: 0.8,
+          scale: 1.25,
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          borderColor: "rgba(255, 255, 255, 1)",
+          duration: 0.3,
+          delay: delay,
+          ease: "power2.out"
+        })
+        .to(pixel, {
+          z: 0,
+          rotateX: 0,
+          rotateY: 0,
+          opacity: 0.15,
+          scale: 1,
+          backgroundColor: "rgba(255, 255, 255, 0.3)",
+          borderColor: "rgba(255, 255, 255, 0.5)",
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
     });
   };
 
   const handleHoverLeave = () => {
     gsap.to(pixelsRef.current, {
+      z: 0,
+      rotateX: 0,
+      rotateY: 0,
       opacity: 0,
       scale: 1,
-      duration: 0.4,
+      backgroundColor: "rgba(255, 255, 255, 0.2)",
+      borderColor: "rgba(255, 255, 255, 0.4)",
+      duration: 0.5,
       stagger: {
-        amount: 0.4,
-        grid: [10, 15],
+        amount: 0.3,
+        grid: [numRows, numCols],
         from: "center"
       },
-      ease: "power2.inOut"
+      overwrite: "auto"
     });
   };
-
-  const numCols = 15;
-  const numRows = 10;
-  const pixels = Array.from({ length: numCols * numRows });
 
   return (
     <main ref={containerRef} className="w-full min-h-screen bg-[#FFFFF3] text-black overflow-hidden font-clash">
@@ -103,17 +207,34 @@ export default function ContactPage() {
       <section className="relative pt-32 pb-24 w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 z-10 flex flex-col justify-center min-h-[80vh]">
         
         {/* Main Banner Area */}
-        <div className="relative w-full max-w-[1100px] mx-auto flex flex-col md:block min-h-[450px] mb-24 mt-10">
+        <div 
+          className="relative w-full max-w-[1100px] mx-auto flex flex-col md:block min-h-[450px] mb-24 mt-10"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeaveContainer}
+        >
           
           {/* Purple Background Box */}
-          <div ref={bgRef} className="absolute right-0 top-0 bottom-0 w-full md:w-[65%] bg-[#7F7CFF] z-0 flex flex-wrap content-start overflow-hidden rounded-3xl md:rounded-none">
+          <div 
+            ref={bgRef} 
+            className="absolute right-0 top-0 bottom-0 w-full md:w-[65%] bg-[#7F7CFF] z-0 flex flex-wrap content-start overflow-hidden rounded-3xl md:rounded-none"
+            style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
+          >
             {pixels.map((_, i) => (
               <div 
                 key={i} 
-                ref={el => pixelsRef.current[i] = el}
-                className="bg-white opacity-0"
-                style={{ width: `${100/numCols}%`, height: `${100/numRows}%` }}
-              ></div>
+                className="flex items-center justify-center"
+                style={{ 
+                  width: `${100/numCols}%`, 
+                  height: `${100/numRows}%`,
+                  transformStyle: "preserve-3d"
+                }}
+              >
+                <div
+                  ref={el => pixelsRef.current[i] = el}
+                  className="w-[85%] h-[85%] bg-white/20 border border-white/40 rounded-sm opacity-0 shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+                  style={{ transformStyle: "preserve-3d" }}
+                />
+              </div>
             ))}
           </div>
 

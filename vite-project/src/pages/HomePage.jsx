@@ -52,6 +52,11 @@ export default function HomePage() {
     if (reduceMotion) return;
 
     let refreshTimer;
+    const onResize = () => {
+      clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 200);
+    };
+
     const ctx = gsap.context(() => {
 
       /* ── 1. Overlapping panel pinning ───────────────────────────── */
@@ -167,9 +172,12 @@ export default function HomePage() {
 
     }, containerRef);
 
+    window.addEventListener("resize", onResize);
+
     return () => {
       ctx.revert();
       clearTimeout(refreshTimer);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
