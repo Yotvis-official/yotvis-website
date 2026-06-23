@@ -4,6 +4,7 @@ import FooterSection from "@/components/sections/footer-section";
 import FaqSection from "@/components/sections/FaqSection";
 import gsap from "gsap";
 import { usePageTransition } from "@/App";
+import { Link } from "react-router-dom";
 
 const appDevFaqs = [
   {
@@ -95,31 +96,39 @@ export default function AppDevelopmentPage() {
         {/* Animated Black Background */}
         <div className="gsap-app-bg absolute top-0 right-0 w-[95%] md:w-[85%] h-full bg-black z-0 mix-blend-multiply opacity-5 md:opacity-5"></div>
 
-        <article className="relative z-10 max-w-3xl">
+        <article className="relative z-10 w-full ">
           <h1 className="gsap-app-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">App<br/>Development</h1>
           
           {/* BLUF Summary for AI Extraction */}
-          <p className="gsap-app-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+          <p className="gsap-app-text text-xl font-medium text-black/90 mb-6 font-nunito">
             App development is the creation of mobile applications that deliver native performance, offline support, and smooth user experiences. Yotvis develops iOS and Android applications to keep your business connected to customers.
           </p>
 
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What is Custom App Development?</h2>
-            <p className="gsap-hero-text max-w-2xl">App development is the process of building robust, scalable mobile and web applications designed to deliver seamless digital experiences. Custom applications are the engines of modern digital businesses.</p>
+            <p className="gsap-hero-text ">App development is the process of building robust, scalable mobile and web applications designed to deliver seamless digital experiences. Custom applications are the engines of modern digital businesses.</p>
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">App Solutions We Provide</h2>
             
-            <ul className="gsap-hero-text list-disc pl-6 space-y-2 max-w-2xl">
+            <ul className="gsap-hero-text list-disc pl-6 space-y-2 ">
               <li><strong>Native & Cross-Platform Apps:</strong> Reaching iOS and Android users seamlessly.</li>
               <li><strong>Complex Web Dashboards:</strong> Internal tools and portals for streamlined operations.</li>
               <li><strong>End-to-End Development:</strong> From initial wireframing to API integration and deployment.</li>
             </ul>
-            <p className="gsap-hero-text max-w-2xl">We focus on clean code structure and superior usability to ensure your app performs flawlessly under pressure and scales effortlessly.</p>
+            <p className="gsap-hero-text ">We focus on clean code structure and superior usability to ensure your app performs flawlessly under pressure and scales effortlessly.</p>
+            
+            <p className="gsap-hero-text pt-6 ">
+              Not sure which tech stack to use for your next app? Read our guide on <Link to="/explore/native-vs-cross-platform-apps" className="text-[#7F7CFF] underline font-medium hover:text-[#6260e0] transition-colors">Native vs. Cross-Platform App Development</Link>.
+            </p>
           </div>
         </article>
       </section>
-      <FaqSection faqsData={appDevFaqs} />
+      <FaqSection 
+        title={<>App Dev<br />Questions<br />Answered</>} 
+        subtitle={"Understand our mobile app development process, cross-platform choices, and scaling strategies."} 
+        faqsData={appDevFaqs} 
+      />
 
       {/* Last Updated Date for AEO Freshness */}
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 py-8 border-t border-black/10 mt-10">

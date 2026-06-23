@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { Home, User, Layers, Briefcase, Mail } from "lucide-react";
+import { Home, User, Layers, Briefcase, Mail, Compass } from "lucide-react";
 import { usePageTransition } from "@/App";
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -9,6 +9,7 @@ const navItems = [
   { name: "About",    icon: User,    path: "/about" },
   { name: "Services", icon: Layers,  path: "/services" },
   { name: "Careers",  icon: Briefcase, path: "/careers" },
+  { name: "Explore",  icon: Compass,   path: "/explore" },
   { name: "Contact",  icon: Mail,    path: "/contact" },
 ];
 
@@ -88,7 +89,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA */}
-        <div className="hidden md:block">
+        <div className="hidden lg:flex flex-shrink-0 items-center justify-end w-32 md:w-48 mr-2">
           <button
             onClick={() => navigateTo("/book-a-call")}
             className="text-[#FFFFF3] text-sm font-medium hover:text-[#FFFF66] transition-colors"

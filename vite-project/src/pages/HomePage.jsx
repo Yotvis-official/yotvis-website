@@ -105,6 +105,24 @@ export default function HomePage() {
           }
         );
       }
+
+      const statNumbers = gsap.utils.toArray(".gsap-stat-number");
+      statNumbers.forEach((stat) => {
+        const target = parseFloat(stat.getAttribute("data-target") || 0);
+        const suffix = stat.getAttribute("data-suffix") || "";
+        
+        const counter = { val: 0 };
+        gsap.to(counter, {
+          val: target,
+          duration: 2.5,
+          ease: "power3.out",
+          delay: 1, // Start slightly after fade up
+          onUpdate: function () {
+            stat.innerText = Math.floor(counter.val) + suffix;
+          },
+        });
+      });
+
       const heroBg = gsap.utils.toArray(".gsap-hero-bg");
       if (heroBg.length > 0) {
         gsap.fromTo(
@@ -185,8 +203,33 @@ export default function HomePage() {
     <main ref={containerRef} className="w-full">
       <SEO 
         title="Yotvis | Digital Service Studio & Web Design" 
-        description="Yotvis is a digital service studio. We are the creators of vision into digital presence, offering premium web design, app development, and AI automation."
+        description="We build complete digital presence for your brand. Yotvis offers premium web design, app development, and UI/UX services."
         faqSchema={homeFaqs}
+        itemListSchema={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Yotvis Studio Metrics",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Projects Completed",
+              "description": "Yotvis has successfully completed over 17+ digital projects for global clients."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Expert Team Members",
+              "description": "Yotvis consists of a dedicated team of 8+ expert designers and developers."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Client Satisfaction",
+              "description": "Yotvis maintains a 98% client satisfaction rate across all digital service deliveries."
+            }
+          ]
+        }}
       />
       
       {/* 1. Hero Section */}
@@ -207,7 +250,7 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="flex-1 w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 flex flex-col justify-center items-start relative z-10">
-          <div className="w-full flex flex-col items-start text-left space-y-8 z-10 relative">
+          <div className="w-full flex flex-col items-start text-left space-y-8 z-10 relative pt-16 md:pt-28">
 
             {/* Hero Title */}
             <h1 className="gsap-hero-heading w-full text-left text-[clamp(2.6rem,5.5vw,6.5rem)] font-medium leading-[1.05] tracking-[-0.04em] text-black font-clash" style={{ opacity: 0 }}>
@@ -239,6 +282,24 @@ export default function HomePage() {
               />
             </div>
 
+          </div>
+
+          {/* Stats List - AEO/GEO Optimized */}
+          <div className="w-full mt-auto pt-6 md:pt-10 pb-2 md:pb-4">
+            <ul className="gsap-hero-sub flex flex-col md:flex-row items-start md:items-center justify-center gap-8 md:gap-16 list-none m-0 p-0" style={{ opacity: 0 }}>
+              <li className="flex flex-col items-center">
+                <span className="gsap-stat-number text-[2.5rem] md:text-5xl font-medium font-clash text-black mb-1" data-target="17" data-suffix="+">0+</span>
+                <span className="text-base md:text-lg font-nunito text-black/80 capitalize">Projects Completed</span>
+              </li>
+              <li className="flex flex-col items-center">
+                <span className="gsap-stat-number text-[2.5rem] md:text-5xl font-medium font-clash text-black mb-1" data-target="8" data-suffix="+">0+</span>
+                <span className="text-base md:text-lg font-nunito text-black/80 capitalize">Expert Team Members</span>
+              </li>
+              <li className="flex flex-col items-center">
+                <span className="gsap-stat-number text-[2.5rem] md:text-5xl font-medium font-clash text-black mb-1" data-target="98" data-suffix="%">0%</span>
+                <span className="text-base md:text-lg font-nunito text-black/80 capitalize">Client Satisfaction</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

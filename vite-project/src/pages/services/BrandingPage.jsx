@@ -4,6 +4,7 @@ import FooterSection from "@/components/sections/footer-section";
 import FaqSection from "@/components/sections/FaqSection";
 import gsap from "gsap";
 import { usePageTransition } from "@/App";
+import { Link } from "react-router-dom";
 
 const brandingFaqs = [
   {
@@ -97,31 +98,39 @@ export default function BrandingPage() {
         {/* Animated Background Block */}
         <div className="gsap-bg-block absolute top-0 right-0 w-[95%] md:w-[85%] h-full bg-[#000000] z-0 mix-blend-multiply opacity-5 md:opacity-5"></div>
 
-        <article className="relative z-10 max-w-3xl">
+        <article className="relative z-10 w-full ">
           <h1 className="gsap-hero-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">Brand<br/>Identity</h1>
           
           {/* BLUF Summary for AI Extraction */}
-          <p className="gsap-hero-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+          <p className="gsap-hero-text text-xl font-medium text-black/90 mb-6 font-nunito">
             Branding is the creation of a distinct visual and conceptual identity that sets your business apart. Yotvis crafts custom logos, design systems, and guidelines to build trust and recognition for your brand.
           </p>
 
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What is Brand Identity?</h2>
-            <p className="gsap-hero-text max-w-2xl">Branding is the process of creating a strong, recognizable identity that separates your business from competitors. Your brand is often the first interaction a customer has with your company.</p>
+            <p className="gsap-hero-text ">Branding is the process of creating a strong, recognizable identity that separates your business from competitors. Your brand is often the first interaction a customer has with your company.</p>
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">Brand Systems We Build</h2>
             
-            <ul className="gsap-hero-text list-disc pl-6 space-y-2 max-w-2xl">
+            <ul className="gsap-hero-text list-disc pl-6 space-y-2 ">
               <li><strong>Visual Identity:</strong> Custom logos, distinct color palettes, and professional typography.</li>
               <li><strong>Brand Strategy:</strong> Defining your unique voice, tone, and market positioning.</li>
               <li><strong>Digital Assets:</strong> Comprehensive brand guidelines, social media kits, and ready-to-use marketing materials.</li>
             </ul>
-            <p className="gsap-hero-text max-w-2xl">Our process is highly collaborative, resulting in a cohesive brand identity that feels authentic, professional, and ready to scale.</p>
+            <p className="gsap-hero-text ">Our process is highly collaborative, resulting in a cohesive brand identity that feels authentic, professional, and ready to scale.</p>
+            
+            <p className="gsap-hero-text pt-6 w-full">
+              Want to discover how we build visual credibility? Read our guide on <Link to="/explore/branding-for-tech-startups" className="text-[#7F7CFF] underline font-medium hover:text-[#6260e0] transition-colors">Branding for Tech Startups</Link>.
+            </p>
           </div>
         </article>
       </section>
-      <FaqSection faqsData={brandingFaqs} />
+      <FaqSection 
+        title={<>Branding<br />Questions<br />Answered</>} 
+        subtitle={"Understand how we define brand strategies, build visual identities, and craft guidelines."} 
+        faqsData={brandingFaqs} 
+      />
 
       {/* Last Updated Date for AEO Freshness */}
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 py-8 border-t border-black/10 mt-10">

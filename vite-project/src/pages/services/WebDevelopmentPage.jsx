@@ -4,6 +4,7 @@ import FooterSection from "@/components/sections/footer-section";
 import FaqSection from "@/components/sections/FaqSection";
 import gsap from "gsap";
 import { usePageTransition } from "@/App";
+import { Link } from "react-router-dom";
 
 const webDevFaqs = [
   {
@@ -97,31 +98,39 @@ export default function WebDevelopmentPage() {
         {/* Animated Blue Background (Yotvis Brand Color) */}
         <div className="gsap-blue-bg absolute top-0 right-0 w-[95%] md:w-[85%] h-full bg-[#7F7CFF] z-0 mix-blend-multiply opacity-20 md:opacity-100"></div>
 
-        <article className="relative z-10 max-w-3xl">
+        <article className="relative z-10 w-full ">
           <h1 className="gsap-hero-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">Website<br/>Development</h1>
           
           {/* BLUF Summary for AI Extraction */}
-          <p className="gsap-hero-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+          <p className="gsap-hero-text text-xl font-medium text-black/90 mb-6 font-nunito">
             Website development is the process of building fast, secure, and custom digital platforms. Yotvis uses modern tech stacks like React and Vite to convert visitors into loyal customers.
           </p>
 
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What is Custom Website Development?</h2>
-            <p className="gsap-hero-text max-w-2xl">Website development is the process of building fast, secure, and fully custom digital platforms that convert visitors into loyal customers. It ensures your brand is represented technically without the limitations of basic templates.</p>
+            <p className="gsap-hero-text ">Website development is the process of building fast, secure, and fully custom digital platforms that convert visitors into loyal customers. It ensures your brand is represented technically without the limitations of basic templates.</p>
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">Modern Tech Stacks We Use</h2>
             
-            <ul className="gsap-hero-text list-disc pl-6 space-y-2 max-w-2xl">
+            <ul className="gsap-hero-text list-disc pl-6 space-y-2 ">
               <li><strong>React & Vite:</strong> For blazingly fast, single-page application architectures.</li>
               <li><strong>Node.js:</strong> For scalable, high-performance backend infrastructure.</li>
               <li><strong>Cloud Deployment:</strong> Automated CI/CD pipelines for zero-downtime updates.</li>
             </ul>
-            <p className="gsap-hero-text max-w-2xl">Beyond aesthetics, we focus on technical SEO, accessibility, and security. We build digital platforms that don't just exist, but actively work to grow your online presence and support your business operations.</p>
+            <p className="gsap-hero-text ">Beyond aesthetics, we focus on technical SEO, accessibility, and security. We build digital platforms that don't just exist, but actively work to grow your online presence and support your business operations.</p>
+            
+            <p className="gsap-hero-text pt-6 ">
+              Want to know how we achieve flawless page speeds? Read our guide on <Link to="/explore/core-web-vitals-seo" className="text-[#7F7CFF] underline font-medium hover:text-[#6260e0] transition-colors">Core Web Vitals and SEO</Link>.
+            </p>
           </div>
         </article>
       </section>
-      <FaqSection faqsData={webDevFaqs} />
+      <FaqSection 
+        title={<>Web Dev<br />Questions<br />Answered</>} 
+        subtitle={"Understand our front-end performance focus, custom CMS development, and web speed guarantees."} 
+        faqsData={webDevFaqs} 
+      />
 
       {/* Last Updated Date for AEO Freshness */}
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 py-8 border-t border-black/10 mt-10">

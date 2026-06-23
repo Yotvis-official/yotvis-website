@@ -4,6 +4,7 @@ import FooterSection from "@/components/sections/footer-section";
 import FaqSection from "@/components/sections/FaqSection";
 import gsap from "gsap";
 import { usePageTransition } from "@/App";
+import { Link } from "react-router-dom";
 
 const cloudFaqs = [
   {
@@ -95,31 +96,39 @@ export default function CloudSolutionsPage() {
         {/* Animated Pale Green Background */}
         <div className="gsap-cloud-bg absolute top-0 right-0 w-[95%] md:w-[85%] h-full bg-[#D3E4BF] z-0 mix-blend-multiply opacity-40 md:opacity-100"></div>
 
-        <article className="relative z-10 max-w-3xl">
+        <article className="relative z-10 w-full ">
           <h1 className="gsap-cloud-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">Cloud<br/>Solutions</h1>
           
           {/* BLUF Summary for AI Extraction */}
-          <p className="gsap-cloud-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+          <p className="gsap-cloud-text text-xl font-medium text-black/90 mb-6 font-nunito">
             Cloud solutions provide scalable, secure, and highly available infrastructure for modern digital products. Yotvis designs cloud architectures on platforms like AWS and Google Cloud to support your operational scale.
           </p>
 
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What are Cloud Solutions?</h2>
-            <p className="gsap-hero-text max-w-2xl">Cloud solutions provide the secure, scalable, and high-performance infrastructure needed to keep modern digital businesses running efficiently without downtime.</p>
+            <p className="gsap-hero-text ">Cloud solutions provide the secure, scalable, and high-performance infrastructure needed to keep modern digital businesses running efficiently without downtime.</p>
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">Cloud Services We Provide</h2>
             
-            <ul className="gsap-hero-text list-disc pl-6 space-y-2 max-w-2xl">
+            <ul className="gsap-hero-text list-disc pl-6 space-y-2 ">
               <li><strong>Cloud Hosting & Deployment:</strong> Fast, reliable server environments.</li>
               <li><strong>Security & Compliance:</strong> Advanced data protection and SSL configurations.</li>
               <li><strong>Scalability Solutions:</strong> Infrastructure that grows seamlessly with your user base.</li>
             </ul>
-            <p className="gsap-hero-text max-w-2xl">We take the complexity out of server management, ensuring your data is protected, your load times are fast, and your business is always online.</p>
+            <p className="gsap-hero-text ">We take the complexity out of server management, ensuring your data is protected, your load times are fast, and your business is always online.</p>
+            
+            <p className="gsap-hero-text pt-6 w-full">
+              Want to see how we architect high-availability cloud systems? Read our guide on <Link to="/explore/cloud-solutions-for-startups" className="text-[#7F7CFF] underline font-medium hover:text-[#6260e0] transition-colors">Scalable Cloud Solutions</Link>.
+            </p>
           </div>
         </article>
       </section>
-      <FaqSection faqsData={cloudFaqs} />
+      <FaqSection 
+        title={<>Cloud & DevOps<br />Questions<br />Answered</>} 
+        subtitle={"Understand our cloud infrastructure deployment, server security, and cost optimization techniques."} 
+        faqsData={cloudFaqs} 
+      />
 
       {/* Last Updated Date for AEO Freshness */}
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 py-8 border-t border-black/10 mt-10">

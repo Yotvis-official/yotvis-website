@@ -6,22 +6,16 @@ export default function PrivacyNotice() {
   const { navigateTo } = usePageTransition();
 
   useEffect(() => {
-    // Check if the user has already accepted cookies
-    const consent = localStorage.getItem("yotvis-cookie-consent");
-    if (!consent) {
-      // Add a tiny delay so it doesn't interrupt the GSAP hero animation
-      const timer = setTimeout(() => setIsVisible(true), 2500);
-      return () => clearTimeout(timer);
-    }
+    // Add a tiny delay so it doesn't interrupt the GSAP hero animation
+    const timer = setTimeout(() => setIsVisible(true), 2500);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem("yotvis-cookie-consent", "accepted");
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem("yotvis-cookie-consent", "declined");
     setIsVisible(false);
   };
 

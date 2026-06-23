@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-export default function SEO({ title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, faqSchema, serviceSchema, breadcrumbSchema }) {
+export default function SEO({ title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, faqSchema, serviceSchema, breadcrumbSchema, itemListSchema }) {
   const defaultTitle = "Yotvis - Building Digital Presence | Web Design & Development";
   const defaultDescription = "Yotvis is a digital service studio. We are the creators of vision into digital presence, offering premium web design, app development, and AI automation.";
   const defaultKeywords = "Yotvis, Web Design, Web Development, App Development, UI/UX Design, Branding, AI Automation, Cloud Solutions, Digital Agency";
@@ -112,6 +112,11 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
       {breadcrumbSchema && (
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
+      {itemListSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(itemListSchema)}
         </script>
       )}
     </Helmet>

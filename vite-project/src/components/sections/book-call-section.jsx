@@ -18,22 +18,28 @@ export default function BookCallSection() {
         }
       });
 
-      // Background Word zoom/fade
-      tl.fromTo(".gsap-call-bg-word",
-        { opacity: 0, scale: 0.8, y: 50 },
-        { opacity: 0.05, scale: 1, y: 0, duration: 1.5, ease: "power3.out" }
+      // Background Drop Panel slides down from top
+      tl.fromTo(".gsap-call-bg-drop",
+        { y: "-100%" },
+        { y: "0%", duration: 1.2, ease: "power4.out" }
+      )
+      // Background Word drops down from top
+      .fromTo(".gsap-call-bg-word",
+        { opacity: 0, scale: 0.8, y: -250 },
+        { opacity: 0.05, scale: 1, y: 0, duration: 1.4, ease: "back.out(1.2)" },
+        "-=0.9"
       )
       // Small Labels
       .fromTo(".gsap-call-label", 
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out" },
-        "-=1.2"
+        "-=1.0"
       )
       // Main Heading
       .fromTo(".gsap-call-heading",
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 1, ease: "power4.out" },
-        "-=1"
+        "-=0.8"
       )
       // Trust Points staggered
       .fromTo(".gsap-call-trust-item",
@@ -59,6 +65,9 @@ export default function BookCallSection() {
       id="book-call" 
       className="relative w-full min-h-screen pt-36 pb-28 md:pt-40 md:pb-32 lg:pt-44 lg:pb-36 bg-[#FFFFF3] overflow-hidden flex flex-col justify-center items-center z-10"
     >
+      {/* Background Drop Panel */}
+      <div className="gsap-call-bg-drop absolute inset-0 bg-[#D3E4BF] pointer-events-none z-0" />
+
       {/* Optional Giant Background Word */}
       <div className="gsap-call-bg-word absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none overflow-hidden w-full flex justify-center opacity-5 mix-blend-multiply z-0">
         <h2 className="text-[15rem] md:text-[25rem] lg:text-[30rem] font-bold text-black font-clash leading-none tracking-tighter">

@@ -62,6 +62,7 @@ export default function FooterSection() {
               { name: "Home", path: "/" },
               { name: "About", path: "/about" },
               { name: "Services", path: "/services" },
+              { name: "Explore", path: "/explore" },
               { name: "Careers", path: "/careers" },
               { name: "Contact", path: "/contact" }
             ].map((link) => (
@@ -161,12 +162,12 @@ export default function FooterSection() {
             >
               Terms & Conditions
             </button>
-            <a 
-              href="/sitemap.xml" 
-              className="text-[#FFFFF3]/70 hover:text-[#FCFF7C] transition-colors text-lg text-left w-fit"
+            <button 
+              onClick={() => navigateTo('/explore')} 
+              className="text-[#FFFFF3]/70 hover:text-[#FCFF7C] transition-colors text-lg text-left w-fit cursor-pointer"
             >
-              Sitemap
-            </a>
+              Explore Insights
+            </button>
           </div>
 
         </div>

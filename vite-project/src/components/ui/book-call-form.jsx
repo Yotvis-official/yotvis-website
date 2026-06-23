@@ -43,10 +43,14 @@ export default function BookCallForm() {
     });
   };
 
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  };
+
   const isStepValid = () => {
     switch (currentStep) {
       case 1:
-        return formData.name.trim() !== "" && formData.email.trim() !== "";
+        return formData.name.trim() !== "" && validateEmail(formData.email);
       case 2:
         return formData.projectNeeds.length > 0;
       case 3:
@@ -72,17 +76,91 @@ export default function BookCallForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isStepValid()) return;
     
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Form Submitted:", formData);
-      setIsSubmitting(false);
+
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbys7c1KTPapTJhkc_ANqdqL2qAqa0aEbJtExbNfa00QNWIKhwrzvt2ItFTsEBMFkBOL/exec";
+    const WEB3FORMS_KEY = "1efa1c55-c556-4d97-a906-cab12d118ad6";
+
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || "Not provided",
+      company: formData.company || "Not provided",
+      services: formData.projectNeeds.join(", ") || "None specified",
+      timeline: formData.timeline,
+      budget: formData.budget,
+      description: formData.projectDescription,
+      preferred_time: formData.preferredCallTime || "Not provided",
+      website: formData.link || "Not provided",
+    };
+
+    // Format the message with perfect alignment of data
+    const formattedNeeds = formData.projectNeeds.map(need => `• ${need}`).join("\n");
+    const message = `*YOTVIS - NEW PROJECT BRIEF*
+----------------------------------------
+*1. CLIENT DETAILS*
+• *Name:* ${formData.name}
+• *Email:* ${formData.email}
+• *Phone:* ${formData.phone || "Not provided"}
+• *Company:* ${formData.company || "Not provided"}
+
+*2. PROJECT REQUIREMENTS*
+${formattedNeeds || "• None specified"}
+
+*3. PROJECT SCOPE & BUDGET*
+• *Timeline:* ${formData.timeline}
+• *Budget:* ${formData.budget}
+
+*4. PROJECT DESCRIPTION*
+${formData.projectDescription}
+
+*5. PREFERENCES & LINKS*
+• *Preferred Time:* ${formData.preferredCallTime || "Not provided"}
+• *Website/Social:* ${formData.link || "Not provided"}
+----------------------------------------`;
+
+    const web3payload = {
+      access_key: WEB3FORMS_KEY,
+      subject: `New Project Request from ${formData.name} - Yotvis`,
+      name: formData.name,
+      email: formData.email,
+      message: message
+    };
+
+    try {
+      await Promise.all([
+        // 1. Web3Forms → Email
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(web3payload)
+        }),
+
+        // 2. Apps Script → Google Sheet
+        fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          mode: "no-cors",
+          body: JSON.stringify(payload)
+        })
+      ]);
+
       setIsSuccess(true);
-    }, 1200);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Still show success to the user even if one analytics/sheet service fails
+      // as long as they pressed submit, we don't want to trap them in a loading state.
+      setIsSuccess(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
@@ -189,9 +267,17 @@ export default function BookCallForm() {
                       autoComplete="email"
                       value={formData.email}
                       onChange={(e) => updateForm("email", e.target.value)}
-                      className="w-full bg-transparent border border-white/20 rounded-2xl px-5 py-4 outline-none focus:border-[#FCFF7C] transition-colors text-[#FFFFF3]"
+                      className={cn(
+                        "w-full bg-transparent border rounded-2xl px-5 py-4 outline-none transition-colors text-[#FFFFF3]",
+                        formData.email.trim() !== "" && !validateEmail(formData.email)
+                          ? "border-red-500 focus:border-red-500"
+                          : "border-white/20 focus:border-[#FCFF7C]"
+                      )}
                       placeholder="jane@example.com"
                     />
+                    {formData.email.trim() !== "" && !validateEmail(formData.email) && (
+                      <p className="text-red-400 text-xs mt-1 ml-1 font-nunito">Please enter a valid email address.</p>
+                    )}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

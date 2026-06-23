@@ -4,6 +4,7 @@ import FooterSection from "@/components/sections/footer-section";
 import FaqSection from "@/components/sections/FaqSection";
 import gsap from "gsap";
 import { usePageTransition } from "@/App";
+import { Link } from "react-router-dom";
 
 const uiuxFaqs = [
   {
@@ -97,31 +98,39 @@ export default function UiUxDesignPage() {
         {/* Animated Background Block */}
         <div className="gsap-bg-block absolute top-0 right-0 w-[95%] md:w-[85%] h-full bg-[#FCFF7C] z-0 mix-blend-multiply opacity-30 md:opacity-100"></div>
 
-        <article className="relative z-10 max-w-3xl">
+        <article className="relative z-10 w-full ">
           <h1 className="gsap-hero-text text-5xl md:text-7xl font-medium font-clash text-black mb-8">UI/UX<br/>Design</h1>
           
           {/* BLUF Summary for AI Extraction */}
-          <p className="gsap-hero-text max-w-2xl text-xl font-medium text-black/90 mb-6 font-nunito">
+          <p className="gsap-hero-text text-xl font-medium text-black/90 mb-6 font-nunito">
             UI/UX design is the process of crafting intuitive, visually stunning, and user-centric interfaces. Yotvis balances form and function to deliver high-converting experiences for websites and mobile applications.
           </p>
 
           <div className="text-lg md:text-xl text-black/80 font-nunito space-y-6">
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">What is UI/UX Design?</h2>
-            <p className="gsap-hero-text max-w-2xl">UI/UX design is the process of creating intuitive, user-friendly, and visually engaging interfaces that drive user satisfaction and achieve your business goals. Great design directly impacts how users perceive and interact with your product.</p>
+            <p className="gsap-hero-text ">UI/UX design is the process of creating intuitive, user-friendly, and visually engaging interfaces that drive user satisfaction and achieve your business goals. Great design directly impacts how users perceive and interact with your product.</p>
             
             <h2 className="gsap-hero-text text-3xl font-medium font-clash text-black pt-4">UI/UX Solutions We Provide</h2>
             
-            <ul className="gsap-hero-text list-disc pl-6 space-y-2 max-w-2xl">
+            <ul className="gsap-hero-text list-disc pl-6 space-y-2 ">
               <li><strong>User Research & Strategy:</strong> Deep diving into user behavior and business objectives.</li>
               <li><strong>Wireframing & Prototyping:</strong> Creating interactive models to test functionality before development.</li>
               <li><strong>High-Fidelity Interface Design:</strong> Delivering polished, beautiful interfaces optimized for all devices.</li>
             </ul>
-            <p className="gsap-hero-text max-w-2xl">We bridge the gap between aesthetics and usability, ensuring every interaction feels natural and effortless.</p>
+            <p className="gsap-hero-text ">We bridge the gap between aesthetics and usability, ensuring every interaction feels natural and effortless.</p>
+          
+            <p className="gsap-hero-text pt-6 w-full">
+              Want to learn the exact design laws we use to drive conversions? Read our guide on <Link to="/explore/ui-ux-design-principles" className="text-[#7F7CFF] underline font-medium hover:text-[#6260e0] transition-colors">UI/UX Design Principles for High-Converting Websites</Link>.
+            </p>
           </div>
         </article>
       </section>
-      <FaqSection faqsData={uiuxFaqs} />
+      <FaqSection 
+        title={<>UI/UX Design<br />Questions<br />Answered</>} 
+        subtitle={"Understand our user-centric design methodologies, wireframing processes, and conversion optimization."} 
+        faqsData={uiuxFaqs} 
+      />
 
       {/* Last Updated Date for AEO Freshness */}
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 py-8 border-t border-black/10 mt-10">

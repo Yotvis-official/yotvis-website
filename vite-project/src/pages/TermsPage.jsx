@@ -4,16 +4,16 @@ import FooterSection from "@/components/sections/footer-section";
 
 export default function TermsPage() {
   return (
-    <main className="w-full min-h-screen bg-[#FFFFF3] text-black pt-32 pb-24 font-clash">
+    <main className="w-full min-h-screen bg-[#FFFFF3] text-black pt-32 font-clash flex flex-col">
       <SEO 
         title="Terms & Conditions"
         description="Read the Terms and Conditions for using Yotvis digital services and website."
       />
-      <section className="max-w-4xl mx-auto px-6 md:px-12 py-16 flex flex-col justify-center min-h-[60vh]">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 py-16 flex flex-col justify-center min-h-[60vh] flex-grow">
         <h1 className="text-4xl md:text-5xl font-clash font-medium text-black mb-8 leading-[1.1] tracking-tight">
           Terms & Conditions
         </h1>
-        <div className="text-black/75 font-nunito space-y-6 text-base md:text-lg leading-relaxed">
+        <div className="text-black/75 font-nunito space-y-6 text-base md:text-lg leading-relaxed max-w-5xl">
           <p><strong>Last updated: June 2026</strong></p>
           <p>
             These terms and conditions outline the rules and regulations for the use of Yotvis's Website, located at yotvis.com.
@@ -32,7 +32,7 @@ export default function TermsPage() {
         </div>
       </section>
       
-      <div className="relative z-[5] w-[calc(100%+4px)] -ml-[2px] bg-[#FFFFF3]">
+      <div className="relative z-[5] w-[calc(100%+4px)] -ml-[2px] bg-[#FFFFF3] mt-auto">
         <FooterSection />
       </div>
     </main>

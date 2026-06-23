@@ -27,6 +27,17 @@ import AppDevelopmentPage from "@/pages/services/AppDevelopmentPage";
 import AiAutomationPage from "@/pages/services/AiAutomationPage";
 import CloudSolutionsPage from "@/pages/services/CloudSolutionsPage";
 
+import ExplorePage from "@/pages/ExplorePage";
+import AiAutomationArticle from "@/pages/explore/AiAutomationArticle";
+import WebDevArticle from "@/pages/explore/WebDevArticle";
+import DigitalPresenceGuide from "@/pages/explore/DigitalPresenceGuide";
+import UiUxArticle from "@/pages/explore/UiUxArticle";
+import ReactViteArticle from "@/pages/explore/ReactViteArticle";
+import CoreWebVitalsArticle from "@/pages/explore/CoreWebVitalsArticle";
+import AppDevArticle from "@/pages/explore/AppDevArticle";
+import BrandingArticle from "@/pages/explore/BrandingArticle";
+import CloudSolutionsArticle from "@/pages/explore/CloudSolutionsArticle";
+
 /* ─────────────────────────────────────────────────────────────
    Route config — label + unique slide direction per page
    from = where the card starts  |  exitTo = where it goes after
@@ -46,6 +57,16 @@ const ROUTE_CONFIG = {
   "/services/app-development":{ label: "App Dev",        from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
   "/services/ai-automation":  { label: "AI Automation",  from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
   "/services/cloud-solutions":{ label: "Cloud Solutions",from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore":                 { label: "Explore",        from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/building-digital-presence-2026": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/branding-for-tech-startups": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/cloud-solutions-for-startups": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/native-vs-cross-platform-apps": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/core-web-vitals-seo": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/ai-automation-for-business": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/ui-ux-design-principles": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/react-and-vite-tech-stack": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/explore/custom-web-dev-vs-templates": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
 };
 
 /* ─────────────────────────────────────────────────────────────
@@ -151,6 +172,16 @@ function AnimatedApp() {
             <Route path="/services/cloud-solutions" element={<CloudSolutionsPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms-and-conditions" element={<TermsPage />} />
+            <Route path="/explore" element={<ExplorePage />} />
+            <Route path="/explore/building-digital-presence-2026" element={<DigitalPresenceGuide />} />
+            <Route path="/explore/branding-for-tech-startups" element={<BrandingArticle />} />
+            <Route path="/explore/cloud-solutions-for-startups" element={<CloudSolutionsArticle />} />
+            <Route path="/explore/native-vs-cross-platform-apps" element={<AppDevArticle />} />
+            <Route path="/explore/core-web-vitals-seo" element={<CoreWebVitalsArticle />} />
+            <Route path="/explore/react-and-vite-tech-stack" element={<ReactViteArticle />} />
+            <Route path="/explore/ai-automation-for-business" element={<AiAutomationArticle />} />
+            <Route path="/explore/ui-ux-design-principles" element={<UiUxArticle />} />
+            <Route path="/explore/custom-web-dev-vs-templates" element={<WebDevArticle />} />
             <Route path="*"         element={<HomePage />}     />
           </Routes>
         </motion.div>
@@ -160,6 +191,8 @@ function AnimatedApp() {
       <AnimatePresence>
         {card && <TransitionCard key={card.key} config={card.config} />}
       </AnimatePresence>
+
+      <PrivacyNotice />
     </TransitionContext.Provider>
   );
 }
@@ -173,7 +206,6 @@ export default function App() {
       <BrowserRouter>
         <div className="w-full min-h-screen bg-[#FFFFF3] font-sans overflow-x-hidden">
           <AnimatedApp />
-          <PrivacyNotice />
         </div>
       </BrowserRouter>
     </HelmetProvider>
