@@ -6,37 +6,37 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { createContext, useContext, useCallback, useState, useRef, useEffect } from "react";
+import { createContext, useContext, useCallback, useState, useRef, useEffect, lazy, Suspense } from "react";
 import { HelmetProvider } from 'react-helmet-async';
 
 import Navbar from "@/components/ui/Navbar";
-import HomePage     from "@/pages/HomePage";
-import AboutPage    from "@/pages/AboutPage";
-import ServicesPage from "@/pages/ServicesPage";
-import CareersPage  from "@/pages/CareersPage";
-import ContactPage  from "@/pages/ContactPage";
-import BookCallPage from "@/pages/BookCallPage";
-import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
-import TermsPage from "@/pages/TermsPage";
+const HomePage     = lazy(() => import("@/pages/HomePage"));
+const AboutPage    = lazy(() => import("@/pages/AboutPage"));
+const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
+const CareersPage  = lazy(() => import("@/pages/CareersPage"));
+const ContactPage  = lazy(() => import("@/pages/ContactPage"));
+const BookCallPage = lazy(() => import("@/pages/BookCallPage"));
+const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicyPage"));
+const TermsPage = lazy(() => import("@/pages/TermsPage"));
 import PrivacyNotice from "@/components/ui/PrivacyNotice";
 
-import BrandingPage from "@/pages/services/BrandingPage";
-import UiUxDesignPage from "@/pages/services/UiUxDesignPage";
-import WebDevelopmentPage from "@/pages/services/WebDevelopmentPage";
-import AppDevelopmentPage from "@/pages/services/AppDevelopmentPage";
-import AiAutomationPage from "@/pages/services/AiAutomationPage";
-import CloudSolutionsPage from "@/pages/services/CloudSolutionsPage";
+const BrandingPage = lazy(() => import("@/pages/services/BrandingPage"));
+const UiUxDesignPage = lazy(() => import("@/pages/services/UiUxDesignPage"));
+const WebDevelopmentPage = lazy(() => import("@/pages/services/WebDevelopmentPage"));
+const AppDevelopmentPage = lazy(() => import("@/pages/services/AppDevelopmentPage"));
+const AiAutomationPage = lazy(() => import("@/pages/services/AiAutomationPage"));
+const CloudSolutionsPage = lazy(() => import("@/pages/services/CloudSolutionsPage"));
 
-import ExplorePage from "@/pages/ExplorePage";
-import AiAutomationArticle from "@/pages/explore/AiAutomationArticle";
-import WebDevArticle from "@/pages/explore/WebDevArticle";
-import DigitalPresenceGuide from "@/pages/explore/DigitalPresenceGuide";
-import UiUxArticle from "@/pages/explore/UiUxArticle";
-import ReactViteArticle from "@/pages/explore/ReactViteArticle";
-import CoreWebVitalsArticle from "@/pages/explore/CoreWebVitalsArticle";
-import AppDevArticle from "@/pages/explore/AppDevArticle";
-import BrandingArticle from "@/pages/explore/BrandingArticle";
-import CloudSolutionsArticle from "@/pages/explore/CloudSolutionsArticle";
+const ExplorePage = lazy(() => import("@/pages/ExplorePage"));
+const AiAutomationArticle = lazy(() => import("@/pages/explore/AiAutomationArticle"));
+const WebDevArticle = lazy(() => import("@/pages/explore/WebDevArticle"));
+const DigitalPresenceGuide = lazy(() => import("@/pages/explore/DigitalPresenceGuide"));
+const UiUxArticle = lazy(() => import("@/pages/explore/UiUxArticle"));
+const ReactViteArticle = lazy(() => import("@/pages/explore/ReactViteArticle"));
+const CoreWebVitalsArticle = lazy(() => import("@/pages/explore/CoreWebVitalsArticle"));
+const AppDevArticle = lazy(() => import("@/pages/explore/AppDevArticle"));
+const BrandingArticle = lazy(() => import("@/pages/explore/BrandingArticle"));
+const CloudSolutionsArticle = lazy(() => import("@/pages/explore/CloudSolutionsArticle"));
 
 /* ─────────────────────────────────────────────────────────────
    Route config — label + unique slide direction per page
@@ -157,33 +157,35 @@ function AnimatedApp() {
           animate={{ opacity: 1, transition: { duration: 0.45, delay: 0.3 } }}
           exit={{ opacity: 0, transition: { duration: 0.2 } }}
         >
-          <Routes location={location}>
-            <Route path="/"         element={<HomePage />}     />
-            <Route path="/about"    element={<AboutPage />}    />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/careers"  element={<CareersPage />}  />
-            <Route path="/contact"  element={<ContactPage />}  />
-            <Route path="/book-a-call" element={<BookCallPage />} />
-            <Route path="/services/branding" element={<BrandingPage />} />
-            <Route path="/services/ui-ux-design" element={<UiUxDesignPage />} />
-            <Route path="/services/web-development" element={<WebDevelopmentPage />} />
-            <Route path="/services/app-development" element={<AppDevelopmentPage />} />
-            <Route path="/services/ai-automation" element={<AiAutomationPage />} />
-            <Route path="/services/cloud-solutions" element={<CloudSolutionsPage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/terms-and-conditions" element={<TermsPage />} />
-            <Route path="/explore" element={<ExplorePage />} />
-            <Route path="/explore/building-digital-presence-2026" element={<DigitalPresenceGuide />} />
-            <Route path="/explore/branding-for-tech-startups" element={<BrandingArticle />} />
-            <Route path="/explore/cloud-solutions-for-startups" element={<CloudSolutionsArticle />} />
-            <Route path="/explore/native-vs-cross-platform-apps" element={<AppDevArticle />} />
-            <Route path="/explore/core-web-vitals-seo" element={<CoreWebVitalsArticle />} />
-            <Route path="/explore/react-and-vite-tech-stack" element={<ReactViteArticle />} />
-            <Route path="/explore/ai-automation-for-business" element={<AiAutomationArticle />} />
-            <Route path="/explore/ui-ux-design-principles" element={<UiUxArticle />} />
-            <Route path="/explore/custom-web-dev-vs-templates" element={<WebDevArticle />} />
-            <Route path="*"         element={<HomePage />}     />
-          </Routes>
+          <Suspense fallback={<div className="min-h-screen bg-[#FFFFF3]" />}>
+            <Routes location={location}>
+              <Route path="/"         element={<HomePage />}     />
+              <Route path="/about"    element={<AboutPage />}    />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/careers"  element={<CareersPage />}  />
+              <Route path="/contact"  element={<ContactPage />}  />
+              <Route path="/book-a-call" element={<BookCallPage />} />
+              <Route path="/services/branding" element={<BrandingPage />} />
+              <Route path="/services/ui-ux-design" element={<UiUxDesignPage />} />
+              <Route path="/services/web-development" element={<WebDevelopmentPage />} />
+              <Route path="/services/app-development" element={<AppDevelopmentPage />} />
+              <Route path="/services/ai-automation" element={<AiAutomationPage />} />
+              <Route path="/services/cloud-solutions" element={<CloudSolutionsPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms-and-conditions" element={<TermsPage />} />
+              <Route path="/explore" element={<ExplorePage />} />
+              <Route path="/explore/building-digital-presence-2026" element={<DigitalPresenceGuide />} />
+              <Route path="/explore/branding-for-tech-startups" element={<BrandingArticle />} />
+              <Route path="/explore/cloud-solutions-for-startups" element={<CloudSolutionsArticle />} />
+              <Route path="/explore/native-vs-cross-platform-apps" element={<AppDevArticle />} />
+              <Route path="/explore/core-web-vitals-seo" element={<CoreWebVitalsArticle />} />
+              <Route path="/explore/react-and-vite-tech-stack" element={<ReactViteArticle />} />
+              <Route path="/explore/ai-automation-for-business" element={<AiAutomationArticle />} />
+              <Route path="/explore/ui-ux-design-principles" element={<UiUxArticle />} />
+              <Route path="/explore/custom-web-dev-vs-templates" element={<WebDevArticle />} />
+              <Route path="*"         element={<HomePage />}     />
+            </Routes>
+          </Suspense>
         </motion.div>
       </AnimatePresence>
 
