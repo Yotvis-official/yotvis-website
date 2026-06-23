@@ -43,11 +43,12 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Yotvis",
       "url": "https://yotvis.com",
+      "name": "Yotvis",
+      "description": "Yotvis is a digital service studio. We are the creators of vision into digital presence.",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://yotvis.com/search?q={search_term_string}",
+        "target": "https://yotvis.com/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
