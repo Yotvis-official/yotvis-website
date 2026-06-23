@@ -286,18 +286,18 @@ export default function HomePage() {
 
           {/* Stats List - AEO/GEO Optimized */}
           <div className="w-full mt-auto pt-6 md:pt-10 pb-2 md:pb-4">
-            <ul className="gsap-hero-sub flex flex-col md:flex-row items-start md:items-center justify-center gap-8 md:gap-16 list-none m-0 p-0" style={{ opacity: 0 }}>
-              <li className="flex flex-col items-center">
-                <span className="gsap-stat-number text-[2.5rem] md:text-5xl font-medium font-clash text-black mb-1" data-target="17" data-suffix="+">0+</span>
-                <span className="text-base md:text-lg font-nunito text-black/80 capitalize">Projects Completed</span>
+            <ul className="gsap-hero-sub flex flex-row items-start md:items-center justify-between md:justify-center gap-2 md:gap-16 list-none m-0 p-0 w-full" style={{ opacity: 0 }}>
+              <li className="flex flex-col items-center flex-1 text-center">
+                <span className="gsap-stat-number text-[2rem] md:text-5xl font-medium font-clash text-black mb-1 leading-none" data-target="17" data-suffix="+">0+</span>
+                <span className="text-[12px] sm:text-sm md:text-lg font-nunito text-black/80 capitalize leading-tight mt-1">Projects<br className="md:hidden" /> Completed</span>
               </li>
-              <li className="flex flex-col items-center">
-                <span className="gsap-stat-number text-[2.5rem] md:text-5xl font-medium font-clash text-black mb-1" data-target="8" data-suffix="+">0+</span>
-                <span className="text-base md:text-lg font-nunito text-black/80 capitalize">Expert Team Members</span>
+              <li className="flex flex-col items-center flex-1 text-center">
+                <span className="gsap-stat-number text-[2rem] md:text-5xl font-medium font-clash text-black mb-1 leading-none" data-target="8" data-suffix="+">0+</span>
+                <span className="text-[12px] sm:text-sm md:text-lg font-nunito text-black/80 capitalize leading-tight mt-1">Expert Team<br className="md:hidden" /> Members</span>
               </li>
-              <li className="flex flex-col items-center">
-                <span className="gsap-stat-number text-[2.5rem] md:text-5xl font-medium font-clash text-black mb-1" data-target="98" data-suffix="%">0%</span>
-                <span className="text-base md:text-lg font-nunito text-black/80 capitalize">Client Satisfaction</span>
+              <li className="flex flex-col items-center flex-1 text-center">
+                <span className="gsap-stat-number text-[2rem] md:text-5xl font-medium font-clash text-black mb-1 leading-none" data-target="98" data-suffix="%">0%</span>
+                <span className="text-[12px] sm:text-sm md:text-lg font-nunito text-black/80 capitalize leading-tight mt-1">Client<br className="md:hidden" /> Satisfaction</span>
               </li>
             </ul>
           </div>
