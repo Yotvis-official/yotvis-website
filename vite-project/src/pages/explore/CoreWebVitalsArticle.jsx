@@ -57,8 +57,8 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Core Web Vitals: How Page Speed Directly Impacts SEO and Conversions",
-  "description": "A masterclass on Core Web Vitals (LCP, INP, CLS). Learn how page speed impacts Google rankings and conversion rates, and how React and Vite architecture solves performance bottlenecks.",
+  "headline": "Core Web Vitals Explained | Page Speed, SEO & Conversions",
+  "description": "A slow page does not just frustrate users — it drops your Google ranking and kills conversions. Learn how LCP, INP, and CLS affect your site and exactly how to fix them.",
   "author": {
     "@type": "Organization",
     "name": "Yotvis",
@@ -104,8 +104,8 @@ export default function CoreWebVitalsArticle() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO
-        title="Core Web Vitals: How Page Speed Impacts SEO & Conversions | Yotvis"
-        description="A masterclass on Core Web Vitals (LCP, INP, CLS). Learn how page speed impacts Google rankings and conversion rates, and how React and Vite architecture solves performance bottlenecks."
+        title="Core Web Vitals Explained | Page Speed, SEO & Conversions"
+        description="A slow page does not just frustrate users — it drops your Google ranking and kills conversions. Learn how LCP, INP, and CLS affect your site and exactly how to fix them."
         canonical="https://yotvis.com/explore/core-web-vitals-seo"
       />
 

@@ -57,8 +57,8 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Native vs. Cross-Platform App Development: What Founders Need to Know",
-  "description": "A masterclass comparing native vs. cross-platform app development. Learn how React Native saves money, when to choose native, and how Yotvis architects scalable apps.",
+  "headline": "Native vs. Cross-Platform Apps | Which Is Right for You?",
+  "description": "Choosing wrong costs months and thousands. This guide breaks down native vs. cross-platform app development — performance, cost, scalability, and exactly when to choose each.",
   "author": {
     "@type": "Organization",
     "name": "Yotvis",
@@ -104,8 +104,8 @@ export default function AppDevArticle() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO
-        title="Native vs. Cross-Platform App Development: What Founders Need to Know | Yotvis"
-        description="A masterclass comparing native vs. cross-platform app development. Learn how React Native saves money, when to choose native, and how Yotvis architects scalable apps."
+        title="Native vs. Cross-Platform Apps | Which Is Right for You?"
+        description="Choosing wrong costs months and thousands. This guide breaks down native vs. cross-platform app development — performance, cost, scalability, and exactly when to choose each."
         canonical="https://yotvis.com/explore/native-vs-cross-platform-apps"
       />
 

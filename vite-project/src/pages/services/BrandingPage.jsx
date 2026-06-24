@@ -57,8 +57,8 @@ export default function BrandingPage() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO 
-        title="Branding Services | Shape Your Identity | Yotvis" 
-        description="Yotvis provides premium branding services, including logos, visual identity, and brand direction for growing businesses."
+        title="Branding Services | Logo, Identity & Brand Systems" 
+        description="People judge your brand before they read a single word. If it looks unpolished, they leave — and they do not come back. Get a logo, visual identity, and brand system built to earn trust on first sight."
         faqSchema={brandingFaqs}
         serviceSchema={{
           "@context": "https://schema.org",

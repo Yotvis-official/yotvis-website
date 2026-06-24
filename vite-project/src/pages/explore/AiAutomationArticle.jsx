@@ -57,8 +57,8 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "How AI Automation Helps Growing Businesses Save Time",
-  "description": "A complete guide to AI automation for growing businesses — covering which processes to automate, how much time you can save, the best tools for SMBs, and how to get started without disrupting operations.",
+  "headline": "AI Automation for Business | Save Time, Remove Bottlenecks",
+  "description": "The businesses growing fastest right now are not working harder — they automated the right things. Learn how AI workflows help you cut manual work, manage leads, and move faster.",
   "author": {
     "@type": "Organization",
     "name": "Yotvis",
@@ -104,8 +104,8 @@ export default function AiAutomationArticle() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO
-        title="How AI Automation Helps Growing Businesses Save Time | Yotvis"
-        description="A complete guide to AI automation for growing businesses — which processes to automate, how much time you save, the best tools for SMBs, and how to start without disrupting operations."
+        title="AI Automation for Business | Save Time, Remove Bottlenecks"
+        description="The businesses growing fastest right now are not working harder — they automated the right things. Learn how AI workflows help you cut manual work, manage leads, and move faster."
         canonical="https://yotvis.com/explore/ai-automation-for-business"
       />
 

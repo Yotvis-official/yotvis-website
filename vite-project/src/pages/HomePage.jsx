@@ -202,8 +202,8 @@ export default function HomePage() {
   return (
     <main ref={containerRef} className="w-full">
       <SEO 
-        title="Yotvis | Digital Service Studio & Web Design" 
-        description="We build complete digital presence for your brand. Yotvis offers premium web design, app development, and UI/UX services."
+        title="Yotvis — Building Digital Presence | Web Design & Development" 
+        description="Most businesses are invisible online. Yotvis changes that — through strategic branding, high-performance websites, AI automation, and cloud systems built to make your brand impossible to ignore."
         faqSchema={homeFaqs}
         itemListSchema={{
           "@context": "https://schema.org",

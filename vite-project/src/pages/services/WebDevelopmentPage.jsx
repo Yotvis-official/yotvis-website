@@ -57,8 +57,8 @@ export default function WebDevelopmentPage() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO 
-        title="Web Development Services | High-Performance Sites | Yotvis" 
-        description="Yotvis develops fast, secure, and fully custom websites designed to convert visitors into loyal customers."
+        title="Website Development | Fast, Responsive & Built to Convert" 
+        description="Your website is your most powerful sales tool — if it is built right. Get a fast, modern website with React and Vite that loads instantly, looks sharp, and turns visitors into clients."
         faqSchema={webDevFaqs}
         serviceSchema={{
           "@context": "https://schema.org",

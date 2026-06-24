@@ -57,8 +57,8 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "UI/UX Design Principles for High-Converting Websites",
-  "description": "A masterclass on UI/UX design principles. Learn how visual hierarchy, cognitive load, and user flows impact conversion rates and how to design websites that scale.",
+  "headline": "UI/UX Design Principles | What Separates High-Converting Sites",
+  "description": "Most websites look fine but convert poorly. Learn the UI/UX principles behind visual hierarchy, user flows, cognitive load, and interface design that actually turns visitors into leads.",
   "author": {
     "@type": "Organization",
     "name": "Yotvis",
@@ -104,8 +104,8 @@ export default function UiUxArticle() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO
-        title="UI/UX Design Principles for High-Converting Websites | Yotvis"
-        description="A masterclass on UI/UX design principles. Learn how visual hierarchy, cognitive load, and user flows impact conversion rates and how to design websites that scale."
+        title="UI/UX Design Principles | What Separates High-Converting Sites"
+        description="Most websites look fine but convert poorly. Learn the UI/UX principles behind visual hierarchy, user flows, cognitive load, and interface design that actually turns visitors into leads."
         canonical="https://yotvis.com/explore/ui-ux-design-principles"
       />
 

@@ -79,8 +79,8 @@ export default function AboutPage() {
   return (
     <main ref={containerRef} className="w-full min-h-screen">
       <SEO 
-        title="About Yotvis | Premium Digital Studio" 
-        description="Learn about Yotvis and our mission to shape brands and build powerful digital presence through custom design and development."
+        title="About Yotvis | We Turn Vision Into Digital Presence" 
+        description="We are not just a dev shop. Yotvis is a digital studio that partners with ambitious brands, creators, and founders to build credible, growth-ready digital presence — from first idea to final launch."
         faqSchema={aboutFaqs}
       />
       <div className="gsap-overlap-panel relative z-[1] w-[calc(100%+4px)] -ml-[2px] bg-[#D3E4BF]">

@@ -176,8 +176,8 @@ export default function ExplorePage() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3] flex flex-col">
       <SEO 
-        title="Explore Digital Insights & Strategy | Yotvis"
-        description="Explore the Yotvis insight hub for in-depth masterclasses on web development, UI/UX design, AI automation, and digital strategy for growing brands in 2026."
+        title="Explore Digital Insights | Strategy, Design & Development"
+        description="Practical insights on branding, UI/UX design, web development, AI automation, cloud solutions, and digital strategy — written for brands that want to grow, not just look good."
         canonical="https://yotvis.com/explore"
       />
 

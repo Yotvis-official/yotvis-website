@@ -57,8 +57,8 @@ export default function UiUxDesignPage() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO 
-        title="UI/UX Design Services | Intuitive Interfaces | Yotvis" 
-        description="Transform your user experience with Yotvis's expert UI/UX design services, creating intuitive and engaging digital products."
+        title="UI/UX Design Services | Figma, Flows & Design Systems" 
+        description="Good design is invisible. Bad design loses customers. Get UI/UX designed for websites, apps, and dashboards that feel effortless — because every click, scroll, and screen was thought through."
         faqSchema={uiuxFaqs}
         serviceSchema={{
           "@context": "https://schema.org",

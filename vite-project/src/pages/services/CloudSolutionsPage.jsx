@@ -55,8 +55,8 @@ export default function CloudSolutionsPage() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO 
-        title="Cloud Solutions | Secure & Scalable Infrastructure | Yotvis" 
-        description="Yotvis deploys secure, high-performance cloud solutions to keep your digital business running efficiently and safely."
+        title="Cloud Solutions | Scalable Infrastructure That Does Not Break" 
+        description="Every hour of downtime is revenue lost and trust damaged. Get cloud deployment, hosting, and infrastructure built to stay fast under pressure, scale when you grow, and never catch you off guard."
         faqSchema={cloudFaqs}
         serviceSchema={{
           "@context": "https://schema.org",

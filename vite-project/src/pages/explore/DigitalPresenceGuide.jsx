@@ -57,8 +57,8 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Ultimate Guide to Building a Digital Presence in 2026",
-  "description": "A 3,000-word masterclass on building a scalable digital presence in 2026. Covering branding, UI/UX, React web development, cloud infrastructure, and AI automation.",
+  "headline": "How to Build a Strong Digital Presence in 2026",
+  "description": "A strong digital presence is not one great website. It is branding, speed, automation, and cloud systems working together. Here is how to build the full picture in 2026.",
   "author": {
     "@type": "Organization",
     "name": "Yotvis",
@@ -104,8 +104,8 @@ export default function DigitalPresenceGuide() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO
-        title="The Ultimate Guide to Building a Digital Presence in 2026 | Yotvis"
-        description="A masterclass on building a scalable digital presence in 2026. Covering branding, UI/UX, React web development, cloud infrastructure, and AI automation."
+        title="How to Build a Strong Digital Presence in 2026"
+        description="A strong digital presence is not one great website. It is branding, speed, automation, and cloud systems working together. Here is how to build the full picture in 2026."
         canonical="https://yotvis.com/explore/building-digital-presence-2026"
       />
 

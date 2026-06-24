@@ -55,8 +55,8 @@ export default function AppDevelopmentPage() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO 
-        title="App Development Services | Scalable Mobile & Web Apps | Yotvis" 
-        description="Yotvis builds custom mobile and web applications with structure, usability, and scalability in mind to support your business growth."
+        title="App Development Services | Mobile & Web Apps That Scale" 
+        description="An app that crashes or frustrates loses users permanently. Get a scalable, smooth mobile or web app designed for real users, real growth, and performance that holds up long term."
         faqSchema={appDevFaqs}
         serviceSchema={{
           "@context": "https://schema.org",

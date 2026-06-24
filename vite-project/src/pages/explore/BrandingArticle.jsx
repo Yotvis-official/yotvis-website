@@ -49,8 +49,8 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Branding for Tech Startups: How to Build Trust and Authority",
-  "description": "A comprehensive masterclass on startup branding. Discover how to build a credible visual identity, define your brand strategy, and scale your tech startup globally.",
+  "headline": "Branding for Startups | Build Trust Before You Have Proof",
+  "description": "Startups that look unpolished get dismissed — even with great products. Learn how to build a brand identity, visual system, and positioning that make investors and customers take you seriously.",
   "author": {
     "@type": "Organization",
     "name": "Yotvis",
@@ -97,8 +97,8 @@ export default function BrandingArticle() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO
-        title="Branding for Tech Startups: How to Build Trust and Authority | Yotvis"
-        description="A comprehensive masterclass on startup branding. Discover how to build a credible visual identity, define your brand strategy, and scale your tech startup globally."
+        title="Branding for Startups | Build Trust Before You Have Proof"
+        description="Startups that look unpolished get dismissed — even with great products. Learn how to build a brand identity, visual system, and positioning that make investors and customers take you seriously."
         canonical="https://yotvis.com/explore/branding-for-tech-startups"
       />
 

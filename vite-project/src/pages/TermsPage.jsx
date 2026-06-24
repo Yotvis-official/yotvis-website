@@ -6,8 +6,8 @@ export default function TermsPage() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3] text-black pt-32 font-clash flex flex-col">
       <SEO 
-        title="Terms & Conditions"
-        description="Read the Terms and Conditions for using Yotvis digital services and website."
+        title="Terms & Conditions | Yotvis"
+        description="Review the Yotvis Terms and Conditions for using our website and engaging our digital services across design, development, automation, and cloud solutions."
       />
       <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-10 xl:px-12 py-16 flex flex-col justify-center min-h-[60vh] flex-grow">
         <h1 className="text-4xl md:text-5xl font-clash font-medium text-black mb-8 leading-[1.1] tracking-tight">

@@ -80,8 +80,8 @@ export default function CareersPage() {
   return (
     <main ref={containerRef} className="w-full min-h-screen bg-black overflow-hidden">
       <SEO 
-        title="Careers at Yotvis | Join Our Digital Studio" 
-        description="Join Yotvis. We are looking for talented individuals to help build powerful digital presence for our clients."
+        title="Careers at Yotvis | Work That Ships, Not Just Practice" 
+        description="Tired of internships that go nowhere and studios that treat you like a resource? At Yotvis, you work on live projects, your name goes on real work, and your growth is not an afterthought."
         keywords="Careers, Jobs, Hiring, Web Design Jobs, Yotvis Careers"
         faqSchema={careersFaqs}
       />

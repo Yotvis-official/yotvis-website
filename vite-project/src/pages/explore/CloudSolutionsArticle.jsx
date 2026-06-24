@@ -49,8 +49,8 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Scalable Cloud Solutions: Architecting Startups for Global Growth",
-  "description": "A deep-dive masterclass on cloud solutions for startups. Learn about serverless architecture, CI/CD automation, cloud cost optimization, and global deployment scaling.",
+  "headline": "Cloud Solutions for Startups | Deploy Faster, Scale Smarter",
+  "description": "Most startups outgrow their infrastructure before they realize it. Learn how cloud solutions help you deploy faster, cut costs, improve uptime, and scale without starting over.",
   "author": {
     "@type": "Organization",
     "name": "Yotvis",
@@ -97,8 +97,8 @@ export default function CloudSolutionsArticle() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO
-        title="Scalable Cloud Solutions: Architecting Startups for Growth | Yotvis"
-        description="A deep-dive masterclass on cloud solutions for startups. Learn about serverless architecture, CI/CD automation, cloud cost optimization, and global deployment scaling."
+        title="Cloud Solutions for Startups | Deploy Faster, Scale Smarter"
+        description="Most startups outgrow their infrastructure before they realize it. Learn how cloud solutions help you deploy faster, cut costs, improve uptime, and scale without starting over."
         canonical="https://yotvis.com/explore/cloud-solutions-for-startups"
       />
 

@@ -57,8 +57,8 @@ export default function AiAutomationPage() {
   return (
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO 
-        title="AI Automation Services | Smart Workflows | Yotvis" 
-        description="Streamline your operations with custom AI automation workflows built by Yotvis to save time and boost efficiency."
+        title="AI Automation Services | Stop Doing What a System Can Do" 
+        description="You are spending hours on tasks a smart workflow could handle in seconds. Cut the manual work, speed up your operations, and free your team to focus on the work that actually grows your business."
         faqSchema={aiFaqs}
         serviceSchema={{
           "@context": "https://schema.org",

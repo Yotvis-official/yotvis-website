@@ -199,8 +199,8 @@ export default function ContactPage() {
   return (
     <main ref={containerRef} className="w-full min-h-screen bg-[#FFFFF3] text-black overflow-hidden font-clash">
       <SEO 
-        title="Contact Yotvis | Start Your Digital Project" 
-        description="Get in touch with Yotvis. Tell us what you want to build and we'll guide the next step in creating your digital presence."
+        title="Contact Yotvis | Start Your Digital Project Today" 
+        description="Have an idea? A goal? Even just a problem you need solved? Tell us where you are and we will help you find the right next move — fast, clear, no pressure."
         keywords="Contact Yotvis, Digital Agency Contact, Web Development Query"
         faqSchema={contactFaqs}
       />

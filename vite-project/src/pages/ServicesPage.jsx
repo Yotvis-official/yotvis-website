@@ -38,8 +38,8 @@ export default function ServicesPage() {
   return (
     <main className="w-full min-h-screen bg-black">
       <SEO 
-        title="Yotvis Services | Web Design & AI Automation" 
-        description="Explore our core services: Branding, UI/UX Design, Website Development, App Development, AI Automation, and Cloud Solutions."
+        title="Digital Services That Build Real Business Growth | Yotvis" 
+        description="Need a brand that commands attention? A website that converts? AI systems that save you hours? Everything your digital presence needs — strategy, design, development, automation, and cloud — in one studio."
         keywords="Web Design, UI/UX, Cloud, AI Automation, Branding Services"
         faqSchema={servicesFaqs}
       />
