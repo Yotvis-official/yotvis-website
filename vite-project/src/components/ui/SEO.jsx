@@ -1,12 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+
 
 export default function SEO({ title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, faqSchema, serviceSchema, breadcrumbSchema, itemListSchema }) {
   const defaultTitle = "Yotvis — Building Digital Presence | Web Design & Development";
   const defaultDescription = "Most businesses struggle to stand out online. Yotvis helps you build a stronger digital presence through branding, high-performance websites, AI automation, and cloud systems.";
   const defaultKeywords = "Yotvis, Web Design, Web Development, App Development, UI/UX Design, Branding, AI Automation, Cloud Solutions, Digital Agency";
 
-  const seoTitle = title ? `${title} | Yotvis` : defaultTitle;
+  const seoTitle = title ? (title.includes('Yotvis') ? title : `${title} | Yotvis`) : defaultTitle;
   const seoDescription = description || defaultDescription;
   const seoKeywords = keywords || defaultKeywords;
   
@@ -34,7 +34,7 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
       "name": "Yotvis",
       "url": "https://yotvis.com",
       "logo": "https://yotvis.com/logo.png",
-      "description": "Yotvis is a digital service studio. We are the creators of vision into digital presence, offering premium web design, app development, and AI automation.",
+      "description": "Most businesses struggle to stand out online. Yotvis helps you build a stronger digital presence through branding, high-performance websites, AI automation, and cloud systems.",
       "sameAs": [
         "https://www.linkedin.com/company/yotvis/",
         "https://www.instagram.com/yotvis_tech"
@@ -45,7 +45,7 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
       "@type": "WebSite",
       "url": "https://yotvis.com",
       "name": "Yotvis",
-      "description": "Yotvis is a digital service studio. We are the creators of vision into digital presence.",
+      "description": "Most businesses struggle to stand out online. Yotvis helps you build a stronger digital presence through branding, high-performance websites, AI automation, and cloud systems.",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://yotvis.com/?q={search_term_string}",
@@ -72,7 +72,7 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
   ];
 
   return (
-    <Helmet>
+    <>
       <title>{seoTitle}</title>
       <meta name="description" content={seoDescription} />
       <meta name="keywords" content={seoKeywords} />
@@ -120,6 +120,6 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
           {JSON.stringify(itemListSchema)}
         </script>
       )}
-    </Helmet>
+    </>
   );
 }

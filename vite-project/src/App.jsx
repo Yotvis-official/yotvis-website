@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { createContext, useContext, useCallback, useState, useRef, useEffect, lazy, Suspense } from "react";
-import { HelmetProvider } from 'react-helmet-async';
+
 
 import Navbar from "@/components/ui/Navbar";
 const HomePage     = lazy(() => import("@/pages/HomePage"));
@@ -204,12 +204,10 @@ function AnimatedApp() {
 ────────────────────────────────────────────────────────────── */
 export default function App() {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
+    <BrowserRouter>
         <div className="w-full min-h-screen bg-[#FFFFF3] font-sans overflow-x-hidden">
           <AnimatedApp />
         </div>
-      </BrowserRouter>
-    </HelmetProvider>
+    </BrowserRouter>
   );
 }
