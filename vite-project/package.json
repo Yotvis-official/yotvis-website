@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node -e \"if (!process.env.VERCEL) { require('child_process').execSync('react-snap', {stdio: 'inherit'}); }\"",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -50,6 +50,32 @@
   "reactSnap": {
     "source": "dist",
     "port": 45679,
+    "include": [
+      "/",
+      "/about",
+      "/services",
+      "/careers",
+      "/contact",
+      "/book-a-call",
+      "/privacy-policy",
+      "/terms-and-conditions",
+      "/explore",
+      "/services/branding",
+      "/services/ui-ux-design",
+      "/services/web-development",
+      "/services/app-development",
+      "/services/ai-automation",
+      "/services/cloud-solutions",
+      "/explore/building-digital-presence-2026",
+      "/explore/branding-for-tech-startups",
+      "/explore/cloud-solutions-for-startups",
+      "/explore/native-vs-cross-platform-apps",
+      "/explore/core-web-vitals-seo",
+      "/explore/react-and-vite-tech-stack",
+      "/explore/ai-automation-for-business",
+      "/explore/ui-ux-design-principles",
+      "/explore/custom-web-dev-vs-templates"
+    ],
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
