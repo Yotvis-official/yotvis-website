@@ -150,56 +150,56 @@ pages.forEach(page => {
   
   // Replace title
   let modifiedHtml = baseHtml.replace(
-    /<title>.*?<\/title>/,
-    `<title>${page.title}</title>`
+    /<title data-rh="true">.*?<\/title>/,
+    `<title data-rh="true">${page.title}</title>`
   );
 
   // Replace primary description
   modifiedHtml = modifiedHtml.replace(
-    /<meta name="description" content=".*?" \/>/,
-    `<meta name="description" content="${page.description}" />`
+    /<meta data-rh="true" name="description" content=".*?" \/>/,
+    `<meta data-rh="true" name="description" content="${page.description}" />`
   );
 
   // Replace og:title
   modifiedHtml = modifiedHtml.replace(
-    /<meta property="og:title" content=".*?" \/>/,
-    `<meta property="og:title" content="${page.title}" />`
+    /<meta data-rh="true" property="og:title" content=".*?" \/>/,
+    `<meta data-rh="true" property="og:title" content="${page.title}" />`
   );
 
   // Replace og:description
   modifiedHtml = modifiedHtml.replace(
-    /<meta property="og:description" content=".*?" \/>/,
-    `<meta property="og:description" content="${page.description}" />`
+    /<meta data-rh="true" property="og:description" content=".*?" \/>/,
+    `<meta data-rh="true" property="og:description" content="${page.description}" />`
   );
 
   // Replace twitter:title
   modifiedHtml = modifiedHtml.replace(
-    /<meta name="twitter:title" content=".*?" \/>/,
-    `<meta name="twitter:title" content="${page.title}" />`
+    /<meta data-rh="true" name="twitter:title" content=".*?" \/>/,
+    `<meta data-rh="true" name="twitter:title" content="${page.title}" />`
   );
 
   // Replace twitter:description
   modifiedHtml = modifiedHtml.replace(
-    /<meta name="twitter:description" content=".*?" \/>/,
-    `<meta name="twitter:description" content="${page.description}" />`
+    /<meta data-rh="true" name="twitter:description" content=".*?" \/>/,
+    `<meta data-rh="true" name="twitter:description" content="${page.description}" />`
   );
 
   // Update canonical link
   modifiedHtml = modifiedHtml.replace(
-    /<link rel="canonical" href="https:\/\/yotvis\.com\/" \/>/,
-    `<link rel="canonical" href="https://yotvis.com${page.path}" />`
+    /<link data-rh="true" rel="canonical" href="https:\/\/yotvis\.com\/" \/>/,
+    `<link data-rh="true" rel="canonical" href="https://yotvis.com${page.path}" />`
   );
 
   // Update og:url
   modifiedHtml = modifiedHtml.replace(
-    /<meta property="og:url" content="https:\/\/yotvis\.com\/" \/>/,
-    `<meta property="og:url" content="https://yotvis.com${page.path}" />`
+    /<meta data-rh="true" property="og:url" content="https:\/\/yotvis\.com\/" \/>/,
+    `<meta data-rh="true" property="og:url" content="https://yotvis.com${page.path}" />`
   );
 
   // Update twitter:url
   modifiedHtml = modifiedHtml.replace(
-    /<meta name="twitter:url" content="https:\/\/yotvis\.com\/" \/>/,
-    `<meta name="twitter:url" content="https://yotvis.com${page.path}" />`
+    /<meta data-rh="true" name="twitter:url" content="https:\/\/yotvis\.com\/" \/>/,
+    `<meta data-rh="true" name="twitter:url" content="https://yotvis.com${page.path}" />`
   );
 
   fs.writeFileSync(targetPath, modifiedHtml, 'utf-8');
