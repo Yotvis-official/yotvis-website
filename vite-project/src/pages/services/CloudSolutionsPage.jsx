@@ -56,7 +56,7 @@ export default function CloudSolutionsPage() {
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO 
         title="Cloud Solutions | Scalable Infrastructure That Does Not Break" 
-        description="Every hour of downtime is revenue lost and trust damaged. Get cloud deployment, hosting, and infrastructure built to stay fast under pressure, scale when you grow, and never catch you off guard."
+        description="Get cloud deployment, hosting, and infrastructure built to stay reliable, scale with growth, and support your business with better control."
         faqSchema={cloudFaqs}
         serviceSchema={{
           "@context": "https://schema.org",

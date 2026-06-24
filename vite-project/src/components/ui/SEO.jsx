@@ -2,8 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 export default function SEO({ title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, faqSchema, serviceSchema, breadcrumbSchema, itemListSchema }) {
-  const defaultTitle = "Yotvis - Building Digital Presence | Web Design & Development";
-  const defaultDescription = "Yotvis is a digital service studio. We are the creators of vision into digital presence, offering premium web design, app development, and AI automation.";
+  const defaultTitle = "Yotvis — Building Digital Presence | Web Design & Development";
+  const defaultDescription = "Most businesses struggle to stand out online. Yotvis helps you build a stronger digital presence through branding, high-performance websites, AI automation, and cloud systems.";
   const defaultKeywords = "Yotvis, Web Design, Web Development, App Development, UI/UX Design, Branding, AI Automation, Cloud Solutions, Digital Agency";
 
   const seoTitle = title ? `${title} | Yotvis` : defaultTitle;

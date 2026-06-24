@@ -58,7 +58,7 @@ export default function BrandingPage() {
     <main className="w-full min-h-screen bg-[#FFFFF3]" ref={containerRef}>
       <SEO 
         title="Branding Services | Logo, Identity & Brand Systems" 
-        description="People judge your brand before they read a single word. If it looks unpolished, they leave — and they do not come back. Get a logo, visual identity, and brand system built to earn trust on first sight."
+        description="People judge your brand before they read a single word. Get a logo, visual identity, and brand system built to earn trust from the first impression."
         faqSchema={brandingFaqs}
         serviceSchema={{
           "@context": "https://schema.org",

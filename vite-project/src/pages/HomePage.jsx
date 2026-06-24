@@ -203,7 +203,7 @@ export default function HomePage() {
     <main ref={containerRef} className="w-full">
       <SEO 
         title="Yotvis — Building Digital Presence | Web Design & Development" 
-        description="Most businesses are invisible online. Yotvis changes that — through strategic branding, high-performance websites, AI automation, and cloud systems built to make your brand impossible to ignore."
+        description="Most businesses struggle to stand out online. Yotvis helps you build a stronger digital presence through branding, high-performance websites, AI automation, and cloud systems."
         faqSchema={homeFaqs}
         itemListSchema={{
           "@context": "https://schema.org",
