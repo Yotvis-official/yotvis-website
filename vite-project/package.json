@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "postbuild": "react-snap",
+    "build": "vite build && react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -49,6 +48,7 @@
   },
   "reactSnap": {
     "source": "dist",
+    "inlineCss": true,
     "port": 45679,
     "include": [
       "/",
