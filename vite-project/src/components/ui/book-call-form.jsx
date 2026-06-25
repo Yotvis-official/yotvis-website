@@ -153,6 +153,17 @@ ${formData.projectDescription}
       ]);
 
       setIsSuccess(true);
+
+      // GA4 Booking Form Tracking
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'booking_form_submitted', {
+          event_category: 'Lead',
+          event_label: 'Book a Call Form',
+          form_services: formData.projectNeeds.join(', '),
+          form_budget: formData.budget,
+          form_timeline: formData.timeline
+        });
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
       // Still show success to the user even if one analytics/sheet service fails

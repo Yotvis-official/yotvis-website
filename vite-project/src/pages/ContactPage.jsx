@@ -256,6 +256,12 @@ export default function ContactPage() {
               <a 
                 ref={iconRef1}
                 href="mailto:contact@yotvis.com" 
+                onClick={() => {
+                  if (window.gtag) window.gtag('event', 'email_click', {
+                    event_category: 'Contact',
+                    event_label: 'contact@yotvis.com'
+                  });
+                }}
                 className="w-[4.5rem] h-[4.5rem] md:w-[5.5rem] md:h-[5.5rem] bg-[#FFFFF3] rounded-[1.25rem] md:rounded-[1.5rem] flex items-center justify-center hover:scale-105 transition-transform text-black shadow-sm relative z-20"
                 onMouseEnter={handleHoverEnter}
                 onMouseLeave={handleHoverLeave}
@@ -271,6 +277,12 @@ export default function ContactPage() {
                 href="https://www.instagram.com/yotvis_tech" 
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (window.gtag) window.gtag('event', 'instagram_click', {
+                    event_category: 'Social',
+                    event_label: 'Instagram'
+                  });
+                }}
                 className="w-[4.5rem] h-[4.5rem] md:w-[5.5rem] md:h-[5.5rem] bg-[#FFFFF3] rounded-[1.25rem] md:rounded-[1.5rem] flex items-center justify-center hover:scale-105 transition-transform text-black shadow-sm relative z-20"
                 onMouseEnter={handleHoverEnter}
                 onMouseLeave={handleHoverLeave}
@@ -285,6 +297,12 @@ export default function ContactPage() {
                 href="https://www.linkedin.com/company/yotvis/" 
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (window.gtag) window.gtag('event', 'linkedin_click', {
+                    event_category: 'Social',
+                    event_label: 'LinkedIn'
+                  });
+                }}
                 className="w-[4.5rem] h-[4.5rem] md:w-[5.5rem] md:h-[5.5rem] bg-[#FFFFF3] rounded-[1.25rem] md:rounded-[1.5rem] flex items-center justify-center hover:scale-105 transition-transform text-black shadow-sm relative z-20"
                 onMouseEnter={handleHoverEnter}
                 onMouseLeave={handleHoverLeave}
