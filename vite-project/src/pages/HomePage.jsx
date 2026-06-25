@@ -86,7 +86,7 @@ export default function HomePage() {
             y: 0,
             duration: 0.9,
             ease: "power4.out",
-            delay: 0.5,
+            delay: 0,
           }
         );
       }
@@ -101,7 +101,7 @@ export default function HomePage() {
             duration: 0.75,
             ease: "power3.out",
             stagger: 0.12,
-            delay: 0.75,
+            delay: 0,
           }
         );
       }
@@ -116,7 +116,7 @@ export default function HomePage() {
           val: target,
           duration: 2.5,
           ease: "power3.out",
-          delay: 1, // Start slightly after fade up
+          delay: 0, // Start slightly after fade up
           onUpdate: function () {
             stat.innerText = Math.floor(counter.val) + suffix;
           },
@@ -134,7 +134,7 @@ export default function HomePage() {
             x: 0,
             duration: 1,
             ease: "power3.out",
-            delay: 0.3,
+            delay: 0,
           }
         );
       }
@@ -253,7 +253,7 @@ export default function HomePage() {
           <div className="w-full flex flex-col items-start text-left space-y-8 z-10 relative pt-16 md:pt-28">
 
             {/* Hero Title */}
-            <h1 className="gsap-hero-heading w-full text-left text-[clamp(2.6rem,5.5vw,6.5rem)] font-medium leading-[1.05] tracking-[-0.04em] text-black font-clash" style={{ opacity: 0 }}>
+            <h1 className="gsap-hero-heading w-full text-left text-[clamp(2.6rem,5.5vw,6.5rem)] font-medium leading-[1.05] tracking-[-0.04em] text-black font-clash" style={{ opacity: 1 }}>
               <span className="block text-left md:whitespace-nowrap">We build complete digital</span>
               <span className="flex flex-wrap md:flex-nowrap items-baseline justify-start gap-x-3 mt-2 md:mt-0 whitespace-nowrap">
                 <span>presence for</span>
