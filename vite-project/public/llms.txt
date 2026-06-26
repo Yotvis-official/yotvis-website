@@ -3,9 +3,38 @@
 Yotvis is a Chennai-based IT services company specializing in web development, branding, UI/UX, app development, AI automation, and cloud solutions.
 
 ## Pages
+
+### Core Pages
 - [Home](https://yotvis.com)
-- [Services](https://yotvis.com/services)
 - [About](https://yotvis.com/about)
+- [Services](https://yotvis.com/services)
+- [Explore Digital Insights](https://yotvis.com/explore)
 - [Contact](https://yotvis.com/contact)
-- [Explore](https://yotvis.com/explore)
+- [Careers](https://yotvis.com/careers)
 - [Book a Call](https://yotvis.com/book-a-call)
+
+### Services
+- [Branding Services](https://yotvis.com/services/branding)
+- [UI/UX Design Services](https://yotvis.com/services/ui-ux-design)
+- [Website Development](https://yotvis.com/services/web-development)
+- [App Development Services](https://yotvis.com/services/app-development)
+- [AI Automation Services](https://yotvis.com/services/ai-automation)
+- [Cloud Solutions](https://yotvis.com/services/cloud-solutions)
+
+### Case Studies
+- [Case Study: 95/100 PageSpeed & Google Indexing in 3 Days](https://yotvis.com/case-studies/yotvis-seo-performance)
+
+### Articles & Insights
+- [How to Build a Strong Digital Presence in 2026](https://yotvis.com/explore/building-digital-presence-2026)
+- [Branding for Startups | Build Trust Before You Have Proof](https://yotvis.com/explore/branding-for-tech-startups)
+- [Cloud Solutions for Startups | Deploy Faster, Scale Smarter](https://yotvis.com/explore/cloud-solutions-for-startups)
+- [Native vs. Cross-Platform Apps | Which Is Right for You?](https://yotvis.com/explore/native-vs-cross-platform-apps)
+- [Core Web Vitals Explained | Page Speed, SEO & Conversions](https://yotvis.com/explore/core-web-vitals-seo)
+- [React + Vite in 2026 | Why It Is the Go-To Tech Stack](https://yotvis.com/explore/react-and-vite-tech-stack)
+- [AI Automation for Business | Save Time, Remove Bottlenecks](https://yotvis.com/explore/ai-automation-for-business)
+- [UI/UX Design Principles | What Separates High-Converting Sites](https://yotvis.com/explore/ui-ux-design-principles)
+- [Custom Web Development vs. Templates | The Real Difference](https://yotvis.com/explore/custom-web-dev-vs-templates)
+
+### Legal
+- [Privacy Policy](https://yotvis.com/privacy-policy)
+- [Terms & Conditions](https://yotvis.com/terms-and-conditions)

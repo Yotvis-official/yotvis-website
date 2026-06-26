@@ -41,7 +41,7 @@ const CoreWebVitalsArticle = lazy(() => import("@/pages/explore/CoreWebVitalsArt
 const AppDevArticle = lazy(() => import("@/pages/explore/AppDevArticle"));
 const BrandingArticle = lazy(() => import("@/pages/explore/BrandingArticle"));
 const CloudSolutionsArticle = lazy(() => import("@/pages/explore/CloudSolutionsArticle"));
-
+const YotvisCaseStudyPage = lazy(() => import("@/pages/case-studies/YotvisCaseStudyPage"));
 /* ─────────────────────────────────────────────────────────────
    Route config — label + unique slide direction per page
    from = where the card starts  |  exitTo = where it goes after
@@ -71,6 +71,7 @@ const ROUTE_CONFIG = {
   "/explore/ui-ux-design-principles": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
   "/explore/react-and-vite-tech-stack": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
   "/explore/custom-web-dev-vs-templates": { label: "Article", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
+  "/case-studies/yotvis-seo-performance": { label: "Case Study", from: { x: "100%", y: 0 }, exitTo: { x: "-100%", y: 0 } },
 };
 
 /* ─────────────────────────────────────────────────────────────
@@ -187,6 +188,7 @@ function AnimatedApp() {
               <Route path="/explore/ai-automation-for-business" element={<AiAutomationArticle />} />
               <Route path="/explore/ui-ux-design-principles" element={<UiUxArticle />} />
               <Route path="/explore/custom-web-dev-vs-templates" element={<WebDevArticle />} />
+              <Route path="/case-studies/yotvis-seo-performance" element={<YotvisCaseStudyPage />} />
               <Route path="*"         element={<HomePage />}     />
             </Routes>
           </Suspense>

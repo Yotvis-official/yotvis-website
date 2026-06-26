@@ -135,6 +135,11 @@ const pages = [
     path: "/explore/custom-web-dev-vs-templates",
     title: "Custom Web Development vs. Templates | The Real Difference",
     description: "Templates get you online. Custom development gets you ahead. Compare both on speed, SEO, flexibility, and long-term scalability — and find out which one your business actually needs."
+  },
+  {
+    path: "/case-studies/yotvis-seo-performance",
+    title: "How Yotvis Achieved 95/100 PageSpeed & Google Indexing in 3 Days | Yotvis Case Study",
+    description: "A full technical breakdown of how Yotvis built, optimized, and indexed its React + Vite website — achieving SEO 100/100, 95/100 mobile performance, and Google indexing in under 72 hours."
   }
 ];
 
