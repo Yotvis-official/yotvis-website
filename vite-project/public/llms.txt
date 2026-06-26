@@ -7,6 +7,5 @@ Yotvis is a Chennai-based IT services company specializing in web development, b
 - [Services](https://yotvis.com/services)
 - [About](https://yotvis.com/about)
 - [Contact](https://yotvis.com/contact)
-
-## Blog
-- [Blog](https://yotvis.com/blog)
+- [Explore](https://yotvis.com/explore)
+- [Book a Call](https://yotvis.com/book-a-call)
