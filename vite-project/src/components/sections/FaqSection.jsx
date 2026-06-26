@@ -75,10 +75,11 @@ export default function FaqSection({
       // GSAP scroll pin effect for the left column (Sticky/Parallel effect)
       let mm = gsap.matchMedia();
       mm.add("(min-width: 768px)", () => {
+        const sectionH = sectionRef.current ? sectionRef.current.offsetHeight : 0;
         ScrollTrigger.create({
           trigger: ".gsap-faq-left",
           start: "top 20%",
-          end: () => sectionRef.current ? `+=${Math.max(0, sectionRef.current.offsetHeight - window.innerHeight)}` : "+=0",
+          end: `+=${Math.max(0, sectionH - window.innerHeight)}`,
           pin: true,
           pinSpacing: false,
         });

@@ -149,12 +149,14 @@ export default function ProcessSection() {
 
       // ── 3D Cube Scroll Movement & True 3D Rotation ────────────────
       if (cubeRef.current && sectionRef.current) {
+        const sectionHeight = sectionRef.current.offsetHeight;
+        
         // 1. Move container vertically
         gsap.fromTo(
           cubeRef.current,
           { y: 0 },
           {
-            y: () => sectionRef.current.offsetHeight * 0.45,
+            y: sectionHeight * 0.45,
             ease: "none",
             scrollTrigger: {
               trigger: sectionRef.current,

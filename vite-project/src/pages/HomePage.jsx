@@ -73,23 +73,28 @@ export default function HomePage() {
         });
       });
 
-      // Re-measure after the framer-motion curtain finishes (0.6s delay + 0.8s sweep)
-      refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 1400);
+      // Removed 1400ms refreshTimer to avoid forced mid-paint reflows
 
 
       const statNumbers = gsap.utils.toArray(".gsap-stat-number");
       statNumbers.forEach((stat) => {
         const target = parseFloat(stat.getAttribute("data-target") || 0);
         const suffix = stat.getAttribute("data-suffix") || "";
-        
         const counter = { val: 0 };
-        gsap.to(counter, {
-          val: target,
-          duration: 2.5,
-          ease: "power3.out",
-          delay: 0, // Start slightly after fade up
-          onUpdate: function () {
-            stat.innerText = Math.floor(counter.val) + suffix;
+      
+        ScrollTrigger.create({
+          trigger: stat,
+          start: "top 85%",
+          once: true,
+          onEnter: () => {
+            gsap.to(counter, {
+              val: target,
+              duration: 2.5,
+              ease: "power3.out",
+              onUpdate: () => {
+                stat.innerText = Math.floor(counter.val) + suffix;
+              },
+            });
           },
         });
       });
