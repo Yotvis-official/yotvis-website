@@ -60,6 +60,7 @@ export default function Navbar() {
             alt="Yotvis Logo"
             width="600"
             height="600"
+            fetchpriority="high"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140px] md:w-[180px] max-w-none mix-blend-screen"
           />
         </button>
