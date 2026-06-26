@@ -1,0 +1,12 @@
+# Yotvis — Digital Innovation Agency
+
+Yotvis is a Chennai-based IT services company specializing in web development, branding, UI/UX, app development, AI automation, and cloud solutions.
+
+## Pages
+- [Home](https://yotvis.com)
+- [Services](https://yotvis.com/services)
+- [About](https://yotvis.com/about)
+- [Contact](https://yotvis.com/contact)
+
+## Blog
+- [Blog](https://yotvis.com/blog)

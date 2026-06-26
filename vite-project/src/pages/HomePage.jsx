@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import SEO from "@/components/ui/SEO";
 import { usePageTransition } from "@/App";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import RotatingWords from "@/components/ui/rotating-words";
@@ -269,7 +269,7 @@ export default function HomePage() {
             </p>
 
             <div className="gsap-hero-sub pt-2 flex justify-start w-full" style={{ opacity: 0 }}>
-              <p className="w-fit text-left text-[clamp(16px,1.4vw,22px)] font-normal leading-[1.6] text-[#7F7CFF] font-nunito">
+              <p className="w-fit text-left text-[clamp(16px,1.4vw,22px)] font-normal leading-[1.6] text-[#4B48FF] font-nunito">
                 Creators of Vision Into Digital Presence.
               </p>
             </div>

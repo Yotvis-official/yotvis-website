@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import SEO from "@/components/ui/SEO";
 import FooterSection from "@/components/sections/footer-section";
 import FaqSection from "@/components/sections/FaqSection";

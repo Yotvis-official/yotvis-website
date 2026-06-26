@@ -50,14 +50,33 @@
     content="Most businesses struggle to stand out online. Yotvis helps you build a stronger digital presence through branding, high-performance websites, AI automation, and cloud systems." />
   <meta data-rh="true" name="twitter:image" content="https://yotvis.com/og-image.jpg" />
 
-  <!-- Google tag (gtag.js) - Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4PDR2N6C6"></script>
+  <!-- Google tag (gtag.js) - Analytics Deferred -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-V4PDR2N6C6');
+    window.addEventListener('load', () => {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-V4PDR2N6C6";
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-V4PDR2N6C6');
+    });
   </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFF3;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    }
+    #root {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+  </style>
 </head>
 
 <body>

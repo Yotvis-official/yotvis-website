@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import "./ProcessSection.css";

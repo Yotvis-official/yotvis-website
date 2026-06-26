@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import SEO from "@/components/ui/SEO";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import FaqSection from "@/components/sections/FaqSection";
 import FooterSection from "@/components/sections/footer-section";
 import { Link } from "react-router-dom";

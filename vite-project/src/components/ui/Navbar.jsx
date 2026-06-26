@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { Home, User, Layers, Briefcase, Mail, Compass } from "lucide-react";
 import { usePageTransition } from "@/App";
 import { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 
 const navItems = [
   { name: "Home",     icon: Home,    path: "/" },
@@ -104,6 +104,7 @@ export default function Navbar() {
         <button 
           className="lg:hidden text-[#FFFFF3] relative z-[101] w-10 h-10 flex items-center justify-center cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Open menu"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="overflow-visible">
             <line className="hamburger-top" x1="4" x2="20" y1="6"  y2="6" style={{ transformOrigin: "center" }} />

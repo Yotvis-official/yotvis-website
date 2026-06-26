@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import SEO from "@/components/ui/SEO";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutHeroSection from "@/components/sections/about-hero-section";
 import VisionMissionSection from "@/components/sections/vision-mission-section";

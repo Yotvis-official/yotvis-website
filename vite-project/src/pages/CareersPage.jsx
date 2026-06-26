@@ -5,7 +5,7 @@ import FaqSection from "@/components/sections/FaqSection";
 import FooterSection from "@/components/sections/footer-section";
 import { usePageTransition } from "@/App";
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);

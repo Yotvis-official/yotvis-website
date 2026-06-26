@@ -42,7 +42,7 @@ export default function FooterSection() {
 
           {/* Right: CTA Block */}
           <div className="gsap-footer-cta lg:col-span-4 lg:col-start-9 flex flex-col justify-center items-start lg:items-end text-left lg:text-right">
-            <p className="text-[#FFFFF3]/70 text-lg mb-8 max-w-sm">
+            <p className="text-[#FFFFF3] text-lg mb-8 max-w-sm">
               Building complete digital presence through design, development, automation, and cloud solutions.
             </p>
             <button 
@@ -59,7 +59,7 @@ export default function FooterSection() {
 
           {/* Quick Links */}
           <div className="gsap-footer-col flex flex-col space-y-4">
-            <h4 className="text-[#D3E4BF] font-clash text-lg font-medium mb-2">Quick Links</h4>
+            <h3 className="text-[#D3E4BF] font-clash text-lg font-medium mb-2">Quick Links</h3>
             {[
               { name: "Home", path: "/" },
               { name: "About", path: "/about" },
@@ -80,7 +80,7 @@ export default function FooterSection() {
 
           {/* Services */}
           <div className="gsap-footer-col flex flex-col space-y-4">
-            <h4 className="text-[#D3E4BF] font-clash text-lg font-medium mb-2">Services</h4>
+            <h3 className="text-[#D3E4BF] font-clash text-lg font-medium mb-2">Services</h3>
             {[
               { name: "Branding", path: "/services/branding" },
               { name: "UI/UX Design", path: "/services/ui-ux-design" },
@@ -101,7 +101,7 @@ export default function FooterSection() {
 
           {/* Contact Details */}
           <div className="gsap-footer-col flex flex-col space-y-4">
-            <h4 className="text-[#D3E4BF] font-clash text-lg font-medium mb-2">Contact Us</h4>
+            <h3 className="text-[#D3E4BF] font-clash text-lg font-medium mb-2">Contact Us</h3>
             
             <a 
               href="mailto:contact@yotvis.com" 
@@ -151,7 +151,7 @@ export default function FooterSection() {
 
           {/* Legal */}
           <div className="gsap-footer-col flex flex-col space-y-4">
-            <h4 className="text-[#D3E4BF] font-clash text-lg font-medium mb-2">Legal</h4>
+            <h3 className="text-[#D3E4BF] font-clash text-lg font-medium mb-2">Legal</h3>
             <button 
               onClick={() => navigateTo('/privacy-policy')} 
               className="text-[#FFFFF3]/70 hover:text-[#FCFF7C] transition-colors text-lg text-left w-fit cursor-pointer"
