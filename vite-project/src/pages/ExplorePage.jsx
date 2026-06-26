@@ -240,7 +240,7 @@ const CaseStudyCard = ({ cs }) => (
       </p>
 
       {/* Metrics */}
-      <div className="grid grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         {cs.metrics.map((m, i) => (
           <div key={i} className="bg-white/5 rounded-xl p-4 border border-white/10">
             <div className="flex items-center gap-2 mb-2">
