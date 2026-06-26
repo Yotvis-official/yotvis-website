@@ -6,7 +6,7 @@ export default function SEO({ title, description, keywords, ogTitle, ogDescripti
   const defaultDescription = "Most businesses struggle to stand out online. Yotvis helps you build a stronger digital presence through branding, high-performance websites, AI automation, and cloud systems.";
   const defaultKeywords = "Yotvis, Web Design, Web Development, App Development, UI/UX Design, Branding, AI Automation, Cloud Solutions, Digital Agency";
 
-  const seoTitle = title ? (title.includes('Yotvis') ? title : `${title} | Yotvis`) : defaultTitle;
+  const seoTitle = title ? (title.trim().endsWith('Yotvis') ? title : `${title} | Yotvis`) : defaultTitle;
   const seoDescription = description || defaultDescription;
   const seoKeywords = keywords || defaultKeywords;
   
