@@ -30,12 +30,9 @@ export default defineConfig({
     target: 'es2015',
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
-              return 'vendor';
-            }
-          }
+        manualChunks: {
+          gsap: ['gsap'],
+          vendor: ['react', 'react-dom', 'react-router-dom']
         }
       }
     }

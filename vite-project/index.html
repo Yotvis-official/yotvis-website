@@ -17,6 +17,8 @@
   <!-- Preload Critical Fonts -->
   <link rel="preload" href="/fonts/ClashDisplay-Variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/Nunito-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- Preload LCP Image -->
+  <link rel="preload" as="image" href="/logo-600.webp" fetchpriority="high" />
 
   <!-- Geo Tags for Local SEO -->
   <meta name="geo.region" content="IN-TN" />
@@ -52,7 +54,7 @@
 
   <!-- Google tag (gtag.js) - Analytics Deferred -->
   <script>
-    window.addEventListener('load', () => {
+    setTimeout(() => {
       const script = document.createElement('script');
       script.async = true;
       script.src = "https://www.googletagmanager.com/gtag/js?id=G-V4PDR2N6C6";
@@ -62,7 +64,7 @@
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-V4PDR2N6C6');
-    });
+    }, 3000);
   </script>
   <style>
     body {

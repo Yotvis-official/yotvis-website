@@ -7,7 +7,11 @@ import {
 } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { createContext, useContext, useCallback, useState, useRef, useEffect, lazy, Suspense } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 import Navbar from "@/components/ui/Navbar";
 const HomePage     = lazy(() => import("@/pages/HomePage"));
