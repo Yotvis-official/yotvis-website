@@ -35,9 +35,6 @@ export default defineConfig({
             if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
               return 'vendor';
             }
-            if (id.includes('gsap') || id.includes('framer-motion')) {
-              return 'animations';
-            }
           }
         }
       }

@@ -11,8 +11,8 @@ export default function PrivacyNotice() {
       return;
     }
 
-    // Add a tiny delay so it doesn't interrupt the GSAP hero animation
-    const timer = setTimeout(() => setIsVisible(true), 2500);
+    // Add a delay so it renders well after the LCP elements (hero content)
+    const timer = setTimeout(() => setIsVisible(true), 4000);
     return () => clearTimeout(timer);
   }, []);
 
