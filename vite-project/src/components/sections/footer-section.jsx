@@ -13,10 +13,10 @@ export default function FooterSection() {
       {/* Blurred Background Logo Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
         <img 
-          src="/logo.webp" 
+          src="/logo-600.webp" 
           alt="" 
-          width="512"
-          height="512"
+          width="600"
+          height="600"
           loading="lazy"
           className="gsap-footer-logo w-[80vw] max-w-[1100px] opacity-[0.12] blur-md scale-125 mix-blend-screen"
         />

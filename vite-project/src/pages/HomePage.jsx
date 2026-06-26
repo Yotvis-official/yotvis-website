@@ -76,35 +76,6 @@ export default function HomePage() {
       // Re-measure after the framer-motion curtain finishes (0.6s delay + 0.8s sweep)
       refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 1400);
 
-      const heroHeading = gsap.utils.toArray(".gsap-hero-heading");
-      if (heroHeading.length > 0) {
-        gsap.fromTo(
-          heroHeading,
-          { opacity: 0, y: 36 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            ease: "power4.out",
-            delay: 0,
-          }
-        );
-      }
-      const heroSub = gsap.utils.toArray(".gsap-hero-sub");
-      if (heroSub.length > 0) {
-        gsap.fromTo(
-          heroSub,
-          { opacity: 0, y: 22 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.75,
-            ease: "power3.out",
-            stagger: 0.12,
-            delay: 0,
-          }
-        );
-      }
 
       const statNumbers = gsap.utils.toArray(".gsap-stat-number");
       statNumbers.forEach((stat) => {
@@ -123,21 +94,6 @@ export default function HomePage() {
         });
       });
 
-      const heroBg = gsap.utils.toArray(".gsap-hero-bg");
-      if (heroBg.length > 0) {
-        gsap.fromTo(
-          heroBg,
-          { opacity: 0, scale: 1.06, x: 24 },
-          {
-            opacity: 1,
-            scale: 1,
-            x: 0,
-            duration: 1,
-            ease: "power3.out",
-            delay: 0,
-          }
-        );
-      }
 
       /* ── 3. Process section heading — fade-up ───────────────────── */
       // Removed old process section GSAP animations that targeted .yp-left and .yp-bg-word
@@ -237,7 +193,7 @@ export default function HomePage() {
       <section className="relative w-full h-screen pt-[96px] pb-[40px] md:pt-[120px] md:pb-[60px] bg-[#FFFFF3] overflow-hidden flex flex-col items-center justify-center z-10">
 
         {/* Decorative Yellow Shape (Right) */}
-        <div className="gsap-hero-bg absolute top-[-5%] right-0 w-[45%] lg:w-[40%] h-[115%] pointer-events-none hidden md:block">
+        <div className="animate-hero-bg absolute top-[-5%] right-0 w-[45%] lg:w-[40%] h-[115%] pointer-events-none hidden md:block">
           <img
             src="/shape.png"
             alt=""
@@ -253,7 +209,7 @@ export default function HomePage() {
           <div className="w-full flex flex-col items-start text-left space-y-8 z-10 relative pt-16 md:pt-28">
 
             {/* Hero Title */}
-            <h1 className="gsap-hero-heading w-full text-left text-[clamp(2.6rem,5.5vw,6.5rem)] font-medium leading-[1.05] tracking-[-0.04em] text-black font-clash" style={{ opacity: 1 }}>
+            <h1 className="animate-hero-heading w-full text-left text-[clamp(2.6rem,5.5vw,6.5rem)] font-medium leading-[1.05] tracking-[-0.04em] text-black font-clash">
               <span className="block text-left md:whitespace-nowrap">We build complete digital</span>
               <span className="flex flex-wrap md:flex-nowrap items-baseline justify-start gap-x-3 mt-2 md:mt-0 whitespace-nowrap">
                 <span>presence for</span>
@@ -264,18 +220,18 @@ export default function HomePage() {
             </h1>
 
             {/* Hero Subtext */}
-            <p className="gsap-hero-sub text-left text-[clamp(16px,1.4vw,22px)] font-normal leading-[1.6] max-w-[720px] text-black/70 font-nunito" style={{ opacity: 0 }}>
+            <p className="animate-hero-sub text-left text-[clamp(16px,1.4vw,22px)] font-normal leading-[1.6] max-w-[720px] text-black/70 font-nunito" style={{ animationDelay: '0.12s' }}>
               We turn vision into digital presence. From brand identity to digital systems, every layer is crafted to look sharp, work seamlessly, and scale with purpose.
             </p>
 
-            <div className="gsap-hero-sub pt-2 flex justify-start w-full" style={{ opacity: 0 }}>
+            <div className="animate-hero-sub pt-2 flex justify-start w-full" style={{ animationDelay: '0.24s' }}>
               <p className="w-fit text-left text-[clamp(16px,1.4vw,22px)] font-normal leading-[1.6] text-[#4B48FF] font-nunito">
                 Creators of Vision Into Digital Presence.
               </p>
             </div>
 
             {/* Hero Button */}
-            <div className="gsap-hero-sub flex items-center justify-start space-x-6 pt-4 w-full" style={{ opacity: 0 }}>
+            <div className="animate-hero-sub flex items-center justify-start space-x-6 pt-4 w-full" style={{ animationDelay: '0.36s' }}>
               <FlowButton
                 text="Explore Services"
                 onClick={() => navigateTo("/services")}
@@ -286,7 +242,7 @@ export default function HomePage() {
 
           {/* Stats List - AEO/GEO Optimized */}
           <div className="w-full mt-auto pt-6 md:pt-10 pb-2 md:pb-4">
-            <ul className="gsap-hero-sub flex flex-row items-start md:items-center justify-between md:justify-center gap-2 md:gap-16 list-none m-0 p-0 w-full" style={{ opacity: 0 }}>
+            <ul className="animate-hero-sub flex flex-row items-start md:items-center justify-between md:justify-center gap-2 md:gap-16 list-none m-0 p-0 w-full" style={{ animationDelay: '0.48s' }}>
               <li className="flex flex-col items-center flex-1 text-center">
                 <span className="gsap-stat-number text-[2rem] md:text-5xl font-medium font-clash text-black mb-1 leading-none" data-target="17" data-suffix="+">0+</span>
                 <span className="text-[12px] sm:text-sm md:text-lg font-nunito text-black/80 capitalize leading-tight mt-1">Projects<br className="md:hidden" /> Completed</span>

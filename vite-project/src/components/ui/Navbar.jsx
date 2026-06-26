@@ -56,10 +56,10 @@ export default function Navbar() {
           className="flex-shrink-0 flex items-center h-full w-32 md:w-48 relative overflow-hidden rounded-l-full ml-2 cursor-pointer"
         >
           <img
-            src="/logo.webp"
+            src="/logo-600.webp"
             alt="Yotvis Logo"
-            width="512"
-            height="512"
+            width="600"
+            height="600"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140px] md:w-[180px] max-w-none mix-blend-screen"
           />
         </button>
