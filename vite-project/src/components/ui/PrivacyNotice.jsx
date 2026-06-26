@@ -11,9 +11,26 @@ export default function PrivacyNotice() {
       return;
     }
 
-    // Add a delay so it renders well after the LCP elements (hero content)
-    const timer = setTimeout(() => setIsVisible(true), 4000);
-    return () => clearTimeout(timer);
+    const showBanner = () => {
+      setIsVisible(true);
+      ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(event => 
+        window.removeEventListener(event, showBanner)
+      );
+    };
+
+    ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(event => 
+      window.addEventListener(event, showBanner, { passive: true })
+    );
+
+    // Fallback in case of no interaction
+    const timer = setTimeout(showBanner, 8000);
+
+    return () => {
+      clearTimeout(timer);
+      ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(event => 
+        window.removeEventListener(event, showBanner)
+      );
+    };
   }, []);
 
   const handleAccept = () => {
